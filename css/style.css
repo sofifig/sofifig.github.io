@@ -6,7 +6,7 @@
   --line: #ded8cc;
   --hatch: #e2dccf;
   --accent: #8c2332;
-  --sans: "Archivo", system-ui, sans-serif;
+  --sans: "Familjen Grotesk", system-ui, sans-serif;
   --maxw: 1140px;
   --pad: 1.5rem;
   --strip-h: clamp(300px, 58vh, 520px);
@@ -64,7 +64,7 @@ html[data-lang="en"] .es { display: none; }
   gap: 0.55rem;
   text-decoration: none;
   color: var(--ink);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.14em;
 }
@@ -83,7 +83,7 @@ html[data-lang="en"] .es { display: none; }
 }
 .nav-links a:hover { color: var(--ink); }
 .nav-links b {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 9px;
   color: var(--accent);
   margin-right: 0.45em;
@@ -106,7 +106,7 @@ html[data-lang="en"] .es { display: none; }
 .lang-toggle:hover { border-color: var(--ink); }
 .lang-toggle .sep { margin: 0 0.3em; opacity: 0.4; font-weight: 400; }
 html[data-lang="es"] .lang-toggle .opt-es,
-html[data-lang="en"] .lang-toggle .opt-en { color: var(--ink); font-weight: 800; }
+html[data-lang="en"] .lang-toggle .opt-en { color: var(--ink); font-weight: 700; }
 
 /* ---- hero ---- */
 .hero {
@@ -124,15 +124,15 @@ html[data-lang="en"] .lang-toggle .opt-en { color: var(--ink); font-weight: 800;
 
 .hero-name {
   font-size: clamp(2.4rem, 8.5vw, 6rem);
-  font-weight: 800;
-  letter-spacing: -0.025em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   line-height: 0.98;
 }
 
 .hero-role {
   margin-top: 0.5rem;
   font-size: clamp(1.2rem, 3.2vw, 2rem);
-  font-weight: 200;
+  font-weight: 400;
   font-style: italic;
   letter-spacing: 0.01em;
   color: var(--accent);
@@ -183,11 +183,11 @@ html[data-lang="en"] .lang-toggle .opt-en { color: var(--ink); font-weight: 800;
   flex-wrap: wrap;
 }
 
-.sec-n { font-weight: 800; font-size: 11px; letter-spacing: 0.1em; color: var(--accent); }
+.sec-n { font-weight: 700; font-size: 11px; letter-spacing: 0.1em; color: var(--accent); }
 
 .section-head h2 {
   font-size: clamp(1.7rem, 4.5vw, 2.8rem);
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
@@ -232,7 +232,7 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 
 .about-text .lead {
   font-size: clamp(1.15rem, 2.3vw, 1.5rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.01em;
   margin-bottom: 1.3rem;
@@ -262,7 +262,7 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
   cursor: pointer;
   font-family: inherit;
   font-size: clamp(1.5rem, 4.5vw, 2.8rem);
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--ink);
   transition: color 0.25s, font-weight 0.25s;
@@ -329,12 +329,12 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
   width: clamp(230px, 26vw, 300px);
   align-self: center;
 }
-.box-text p { font-size: 15px; font-weight: 300; line-height: 1.6; }
+.box-text p { font-size: 15px; font-weight: 400; line-height: 1.6; }
 
 /* ---- contacto ---- */
 .contact .lead {
   font-size: clamp(1.4rem, 3.5vw, 2.2rem);
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: -0.02em;
   margin-bottom: 1.8rem;
 }
@@ -363,7 +363,7 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
   gap: 0.5rem 2.5rem;
   color: var(--muted);
 }
-.rotulo b { color: var(--ink); font-weight: 800; }
+.rotulo b { color: var(--ink); font-weight: 700; }
 .rotulo-lam { margin-left: auto; }
 
 /* ---- reveal ---- */
