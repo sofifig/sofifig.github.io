@@ -6,7 +6,7 @@
   --line: #ded8cc;
   --hatch: #e2dccf;
   --accent: #8c2332;
-  --sans: "Montserrat", system-ui, sans-serif;
+  --sans: "Archivo", system-ui, sans-serif;
   --maxw: 1140px;
   --pad: 1.5rem;
   --strip-h: clamp(300px, 58vh, 520px);
@@ -125,7 +125,7 @@ html[data-lang="en"] .lang-toggle .opt-en { color: var(--ink); font-weight: 800;
 .hero-name {
   font-size: clamp(2.4rem, 8.5vw, 6rem);
   font-weight: 800;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.025em;
   line-height: 0.98;
 }
 
@@ -277,7 +277,7 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 .project-title {
   font-size: clamp(1.6rem, 4vw, 2.6rem);
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   line-height: 1.05;
 }
 
