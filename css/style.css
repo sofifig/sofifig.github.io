@@ -6,10 +6,11 @@
   --line: #ded8cc;
   --hatch: #e2dccf;
   --accent: #8c2332;
+  --on-accent: #fdfbf7;
   --sans: "Familjen Grotesk", system-ui, sans-serif;
   --maxw: 1140px;
   --pad: 1.5rem;
-  --strip-h: clamp(300px, 58vh, 520px);
+  --strip-h: clamp(340px, 72vh, 760px);
   --cover-h: clamp(150px, 17vw, 250px);
   --meta-w: clamp(150px, 18vw, 220px);
   --strip-gap: clamp(1.5rem, 3.5vw, 3.5rem);
@@ -56,9 +57,8 @@ html[data-lang="en"] .es { display: none; }
   align-items: center;
   gap: 1.5rem;
   padding: 0.8rem var(--pad);
-  background: color-mix(in srgb, var(--paper) 90%, transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
 .nav-name {
@@ -66,7 +66,7 @@ html[data-lang="en"] .es { display: none; }
   align-items: center;
   gap: 0.55rem;
   text-decoration: none;
-  color: var(--ink);
+  color: var(--on-accent);
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.14em;
@@ -81,22 +81,22 @@ html[data-lang="en"] .es { display: none; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--on-accent) 72%, transparent);
   transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover { color: var(--on-accent); }
 .nav-links b {
   font-weight: 700;
   font-size: 9px;
-  color: var(--accent);
+  color: color-mix(in srgb, var(--on-accent) 72%, transparent);
   margin-right: 0.45em;
   vertical-align: 0.2em;
 }
 
 .lang-toggle {
-  border: 1.5px solid var(--line);
+  border: 1.5px solid color-mix(in srgb, var(--on-accent) 45%, transparent);
   background: none;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--on-accent) 72%, transparent);
   font-family: inherit;
   font-size: 10px;
   font-weight: 600;
@@ -106,10 +106,10 @@ html[data-lang="en"] .es { display: none; }
   cursor: pointer;
   transition: border-color 0.2s;
 }
-.lang-toggle:hover { border-color: var(--ink); }
+.lang-toggle:hover { border-color: var(--on-accent); }
 .lang-toggle .sep { margin: 0 0.3em; opacity: 0.4; font-weight: 400; }
 html[data-lang="es"] .lang-toggle .opt-es,
-html[data-lang="en"] .lang-toggle .opt-en { color: var(--ink); font-weight: 700; }
+html[data-lang="en"] .lang-toggle .opt-en { color: var(--on-accent); font-weight: 700; }
 
 /* ---- hero ---- */
 .hero {
