@@ -435,6 +435,50 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
   background: var(--paper-2);
 }
 
+/* ---- conjunto que se hojea en el mismo lugar ----
+   El marco toma la proporción de la pieza más ancha del conjunto, así el
+   ancho no cambia al pasar de una a otra y la tira no se corre. */
+.box-set .set-frame {
+  position: relative;
+  height: var(--strip-h);
+  aspect-ratio: var(--set-ar, 16 / 10);
+  background: var(--paper-2);
+  cursor: pointer;
+}
+.box-set .set-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.box-set .set-frame img.is-on { opacity: 1; }
+
+.set-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+.set-btn {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  border: 1.2px solid var(--line);
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1;
+  transition: border-color 0.2s, color 0.2s;
+}
+.set-btn:hover { border-color: var(--accent); color: var(--accent); }
+.set-count { color: var(--accent); font-variant-numeric: tabular-nums; }
+.set-cap { color: var(--muted); }
+
 /* el resto del contenido no existe hasta abrir */
 .box-extra { display: none; }
 .project.is-open .box-extra { display: block; animation: fadein 0.5s ease 0.25s both; }

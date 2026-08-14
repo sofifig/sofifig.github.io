@@ -72,6 +72,35 @@
     });
   });
 
+  /* ---- conjuntos que se hojean sin salir de la tira ---- */
+  document.querySelectorAll(".box-set").forEach(function (caja) {
+    var fotos = caja.querySelectorAll(".set-frame img");
+    var cuenta = caja.querySelector(".set-count");
+    var pie = caja.querySelector(".set-cap");
+    var total = fotos.length;
+    var i = 0;
+
+    function mostrar(n) {
+      i = (n + total) % total;
+      fotos.forEach(function (f, k) { f.classList.toggle("is-on", k === i); });
+      if (cuenta) cuenta.textContent = ("0" + (i + 1)).slice(-2) + " / " + ("0" + total).slice(-2);
+      if (pie) {
+        pie.querySelectorAll("span").forEach(function (s, k) {
+          s.hidden = Math.floor(k / 2) !== i;
+        });
+      }
+    }
+
+    /* un clic en la imagen avanza; las flechas permiten volver */
+    caja.querySelector(".set-frame").addEventListener("click", function () { mostrar(i + 1); });
+    var prev = caja.querySelector(".set-prev");
+    var next = caja.querySelector(".set-next");
+    if (prev) prev.addEventListener("click", function (e) { e.stopPropagation(); mostrar(i - 1); });
+    if (next) next.addEventListener("click", function (e) { e.stopPropagation(); mostrar(i + 1); });
+
+    mostrar(0);
+  });
+
   /* ---- tiras horizontales: arrastrar con el mouse ---- */
   document.querySelectorAll(".strip").forEach(function (strip) {
     var down = false, startX = 0, startScroll = 0, moved = 0;
