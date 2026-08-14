@@ -104,67 +104,83 @@
       <h2><span class="es">proyecto de título</span><span class="en">thesis project</span></h2>
       <p class="sec-sub label">Chile · UTFSM</p>
     </header>
-
-    <div class="project-head reveal">
-      <h3 class="project-title"><span class="es">Nombre del proyecto de título</span><span class="en">Thesis project name</span></h3>
-      <p class="project-loc"><span class="es">Valparaíso, Chile</span><span class="en">Valparaíso, Chile</span></p>
-    </div>
-
-    <dl class="ficha reveal">
-      <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd>—</dd></div>
-      <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd>—</dd></div>
-      <div><dt class="label"><span class="es">superficie</span><span class="en">size</span></dt><dd>— m²</dd></div>
-      <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>2026</dd></div>
-      <div><dt class="label"><span class="es">rol</span><span class="en">role</span></dt><dd><span class="es">individual</span><span class="en">individual</span></dd></div>
-    </dl>
   </div>
 
-  <div class="strip reveal" tabindex="0" role="region" aria-label="Recorrido del proyecto de título">
-    <div class="strip-inner">
-      <div class="box box-text">
-        <p><span class="es">[Dos o tres frases sobre la idea. Qué pregunta responde el proyecto y cuál fue la jugada. El resto lo cuentan las imágenes.]</span><span class="en">[Two or three sentences about the idea. What question the project answers and what the move was. The images tell the rest.]</span></p>
-      </div>
-      <figure class="box box-img" style="--ar:16/9">
-        <div class="ph" data-ph-es="imagen principal" data-ph-en="hero image"></div>
-        <figcaption class="label"><span class="es">fig. 01 — vista general</span><span class="en">fig. 01 — general view</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:4/3">
-        <div class="ph" data-ph-es="el lugar" data-ph-en="the site"></div>
-        <figcaption class="label"><span class="es">01 — el lugar</span><span class="en">01 — the site</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:4/3">
-        <div class="ph" data-ph-es="el trazado" data-ph-en="the trace"></div>
-        <figcaption class="label"><span class="es">02 — el trazado</span><span class="en">02 — the trace</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:4/3">
-        <div class="ph" data-ph-es="el volumen" data-ph-en="the volume"></div>
-        <figcaption class="label"><span class="es">03 — el volumen</span><span class="en">03 — the volume</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:4/3">
-        <div class="ph" data-ph-es="la estructura" data-ph-en="the structure"></div>
-        <figcaption class="label"><span class="es">04 — la estructura</span><span class="en">04 — the structure</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:4/3">
-        <div class="ph" data-ph-es="el proyecto" data-ph-en="the project"></div>
-        <figcaption class="label"><span class="es">05 — el proyecto</span><span class="en">05 — the project</span></figcaption>
-      </figure>
-      <div class="box box-text">
-        <p><span class="es">[Segundo texto: la materialidad, la estructura, lo que resuelve el proyecto en concreto.]</span><span class="en">[Second text: materiality, structure, what the project actually resolves.]</span></p>
-      </div>
-      <figure class="box box-img" style="--ar:3/4">
-        <div class="ph" data-ph-es="planta" data-ph-en="plan"></div>
-        <figcaption class="label"><span class="es">planta principal</span><span class="en">main floor plan</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:16/9">
-        <div class="ph" data-ph-es="corte" data-ph-en="section"></div>
-        <figcaption class="label"><span class="es">corte transversal</span><span class="en">cross section</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:16/9">
-        <div class="ph" data-ph-es="imagen de cierre" data-ph-en="closing image"></div>
-        <figcaption class="label"><span class="es">fig. 02 — el proyecto en su contexto</span><span class="en">fig. 02 — the project in context</span></figcaption>
-      </figure>
+  <article class="project reveal">
+    <div class="wrap">
+      <button class="cover" aria-expanded="false" aria-controls="panel-titulo">
+        <div class="cover-img ph" data-ph-es="imagen principal" data-ph-en="hero image" style="--ar:16/9"></div>
+        <div class="cover-bar">
+          <div class="cover-id">
+            <h3 class="cover-title"><span class="es">Nombre del proyecto de título</span><span class="en">Thesis project name</span></h3>
+            <p class="cover-loc">Valparaíso, Chile · 2026</p>
+          </div>
+          <span class="cover-cue label">
+            <span class="cue-open"><span class="es">ver proyecto</span><span class="en">view project</span></span>
+            <span class="cue-close"><span class="es">cerrar</span><span class="en">close</span></span>
+            <span class="cue-icon" aria-hidden="true"></span>
+          </span>
+        </div>
+      </button>
     </div>
-  </div>
+
+    <div class="panel" id="panel-titulo">
+      <div class="panel-inner">
+        <div class="wrap">
+          <dl class="ficha">
+            <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd>—</dd></div>
+            <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd>—</dd></div>
+            <div><dt class="label"><span class="es">superficie</span><span class="en">size</span></dt><dd>— m²</dd></div>
+            <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>2026</dd></div>
+            <div><dt class="label"><span class="es">rol</span><span class="en">role</span></dt><dd><span class="es">individual</span><span class="en">individual</span></dd></div>
+          </dl>
+        </div>
+
+        <div class="strip" tabindex="0" role="region" aria-label="Recorrido del proyecto de título">
+          <div class="strip-inner">
+            <div class="box box-text">
+              <p><span class="es">[Dos o tres frases sobre la idea. Qué pregunta responde el proyecto y cuál fue la jugada. El resto lo cuentan las imágenes.]</span><span class="en">[Two or three sentences about the idea. What question the project answers and what the move was. The images tell the rest.]</span></p>
+            </div>
+            <figure class="box box-img" style="--ar:4/3">
+              <div class="ph" data-ph-es="el lugar" data-ph-en="the site"></div>
+              <figcaption class="label"><span class="es">01 — el lugar</span><span class="en">01 — the site</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:4/3">
+              <div class="ph" data-ph-es="el trazado" data-ph-en="the trace"></div>
+              <figcaption class="label"><span class="es">02 — el trazado</span><span class="en">02 — the trace</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:4/3">
+              <div class="ph" data-ph-es="el volumen" data-ph-en="the volume"></div>
+              <figcaption class="label"><span class="es">03 — el volumen</span><span class="en">03 — the volume</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:4/3">
+              <div class="ph" data-ph-es="la estructura" data-ph-en="the structure"></div>
+              <figcaption class="label"><span class="es">04 — la estructura</span><span class="en">04 — the structure</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:4/3">
+              <div class="ph" data-ph-es="el proyecto" data-ph-en="the project"></div>
+              <figcaption class="label"><span class="es">05 — el proyecto</span><span class="en">05 — the project</span></figcaption>
+            </figure>
+            <div class="box box-text">
+              <p><span class="es">[Segundo texto: la materialidad, la estructura, lo que resuelve el proyecto en concreto.]</span><span class="en">[Second text: materiality, structure, what the project actually resolves.]</span></p>
+            </div>
+            <figure class="box box-img" style="--ar:3/4">
+              <div class="ph" data-ph-es="planta" data-ph-en="plan"></div>
+              <figcaption class="label"><span class="es">planta principal</span><span class="en">main floor plan</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:16/9">
+              <div class="ph" data-ph-es="corte" data-ph-en="section"></div>
+              <figcaption class="label"><span class="es">corte transversal</span><span class="en">cross section</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:16/9">
+              <div class="ph" data-ph-es="imagen de cierre" data-ph-en="closing image"></div>
+              <figcaption class="label"><span class="es">el proyecto en su contexto</span><span class="en">the project in context</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
 </section>
 
 <section class="section" id="tum">
@@ -174,85 +190,117 @@
       <h2><span class="es">Alemania</span><span class="en">Germany</span></h2>
       <p class="sec-sub label">Technische Universität München</p>
     </header>
-
-    <div class="project-head reveal">
-      <h3 class="project-title"><span class="es">Proyecto TUM 1</span><span class="en">TUM project 1</span></h3>
-      <p class="project-loc">München, <span class="es">Alemania</span><span class="en">Germany</span></p>
-    </div>
-    <dl class="ficha reveal">
-      <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd>—</dd></div>
-      <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd>—</dd></div>
-      <div><dt class="label"><span class="es">superficie</span><span class="en">size</span></dt><dd>— m²</dd></div>
-      <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>20XX</dd></div>
-      <div><dt class="label"><span class="es">rol</span><span class="en">role</span></dt><dd>—</dd></div>
-    </dl>
   </div>
 
-  <div class="strip reveal" tabindex="0" role="region" aria-label="Proyecto TUM 1">
-    <div class="strip-inner">
-      <div class="box box-text">
-        <p><span class="es">[Dos o tres frases sobre la idea del proyecto.]</span><span class="en">[Two or three sentences about the idea.]</span></p>
+  <article class="project reveal">
+    <div class="wrap">
+      <button class="cover" aria-expanded="false" aria-controls="panel-tum1">
+        <div class="cover-img ph" data-ph-es="imagen principal" data-ph-en="hero image" style="--ar:16/9"></div>
+        <div class="cover-bar">
+          <div class="cover-id">
+            <h3 class="cover-title"><span class="es">Proyecto TUM 1</span><span class="en">TUM project 1</span></h3>
+            <p class="cover-loc">München, <span class="es">Alemania</span><span class="en">Germany</span> · 20XX</p>
+          </div>
+          <span class="cover-cue label">
+            <span class="cue-open"><span class="es">ver proyecto</span><span class="en">view project</span></span>
+            <span class="cue-close"><span class="es">cerrar</span><span class="en">close</span></span>
+            <span class="cue-icon" aria-hidden="true"></span>
+          </span>
+        </div>
+      </button>
+    </div>
+
+    <div class="panel" id="panel-tum1">
+      <div class="panel-inner">
+        <div class="wrap">
+          <dl class="ficha">
+            <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd>—</dd></div>
+            <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd>—</dd></div>
+            <div><dt class="label"><span class="es">superficie</span><span class="en">size</span></dt><dd>— m²</dd></div>
+            <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>20XX</dd></div>
+            <div><dt class="label"><span class="es">rol</span><span class="en">role</span></dt><dd>—</dd></div>
+          </dl>
+        </div>
+
+        <div class="strip" tabindex="0" role="region" aria-label="Proyecto TUM 1">
+          <div class="strip-inner">
+            <div class="box box-text">
+              <p><span class="es">[Dos o tres frases sobre la idea del proyecto.]</span><span class="en">[Two or three sentences about the idea.]</span></p>
+            </div>
+            <figure class="box box-img" style="--ar:4/3">
+              <div class="ph" data-ph-es="diagrama de la idea" data-ph-en="concept diagram"></div>
+              <figcaption class="label"><span class="es">diagrama — los pasos del proyecto</span><span class="en">diagram — the project's steps</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:3/4">
+              <div class="ph" data-ph-es="planta" data-ph-en="plan"></div>
+              <figcaption class="label"><span class="es">planta principal</span><span class="en">main floor plan</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:16/9">
+              <div class="ph" data-ph-es="corte" data-ph-en="section"></div>
+              <figcaption class="label"><span class="es">corte transversal</span><span class="en">cross section</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:16/9">
+              <div class="ph" data-ph-es="imagen de cierre" data-ph-en="closing image"></div>
+              <figcaption class="label"><span class="es">contexto</span><span class="en">context</span></figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
-      <figure class="box box-img" style="--ar:16/9">
-        <div class="ph" data-ph-es="imagen principal" data-ph-en="hero image"></div>
-        <figcaption class="label"><span class="es">fig. 01 — vista general</span><span class="en">fig. 01 — general view</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:4/3">
-        <div class="ph" data-ph-es="diagrama de la idea" data-ph-en="concept diagram"></div>
-        <figcaption class="label"><span class="es">diagrama — los pasos del proyecto</span><span class="en">diagram — the project's steps</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:3/4">
-        <div class="ph" data-ph-es="planta" data-ph-en="plan"></div>
-        <figcaption class="label"><span class="es">planta principal</span><span class="en">main floor plan</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:16/9">
-        <div class="ph" data-ph-es="corte" data-ph-en="section"></div>
-        <figcaption class="label"><span class="es">corte transversal</span><span class="en">cross section</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:16/9">
-        <div class="ph" data-ph-es="imagen de cierre" data-ph-en="closing image"></div>
-        <figcaption class="label"><span class="es">fig. 02 — contexto</span><span class="en">fig. 02 — context</span></figcaption>
-      </figure>
     </div>
-  </div>
+  </article>
 
-  <div class="wrap">
-    <div class="project-head reveal is-second">
-      <h3 class="project-title"><span class="es">Proyecto TUM 2</span><span class="en">TUM project 2</span></h3>
-      <p class="project-loc">München, <span class="es">Alemania</span><span class="en">Germany</span></p>
+  <article class="project reveal">
+    <div class="wrap">
+      <button class="cover" aria-expanded="false" aria-controls="panel-tum2">
+        <div class="cover-img ph" data-ph-es="imagen principal" data-ph-en="hero image" style="--ar:16/9"></div>
+        <div class="cover-bar">
+          <div class="cover-id">
+            <h3 class="cover-title"><span class="es">Proyecto TUM 2</span><span class="en">TUM project 2</span></h3>
+            <p class="cover-loc">München, <span class="es">Alemania</span><span class="en">Germany</span> · 20XX</p>
+          </div>
+          <span class="cover-cue label">
+            <span class="cue-open"><span class="es">ver proyecto</span><span class="en">view project</span></span>
+            <span class="cue-close"><span class="es">cerrar</span><span class="en">close</span></span>
+            <span class="cue-icon" aria-hidden="true"></span>
+          </span>
+        </div>
+      </button>
     </div>
-    <dl class="ficha reveal">
-      <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd>—</dd></div>
-      <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd>—</dd></div>
-      <div><dt class="label"><span class="es">superficie</span><span class="en">size</span></dt><dd>— m²</dd></div>
-      <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>20XX</dd></div>
-      <div><dt class="label"><span class="es">rol</span><span class="en">role</span></dt><dd>—</dd></div>
-    </dl>
-  </div>
 
-  <div class="strip reveal" tabindex="0" role="region" aria-label="Proyecto TUM 2">
-    <div class="strip-inner">
-      <div class="box box-text">
-        <p><span class="es">[Dos o tres frases sobre la idea del proyecto.]</span><span class="en">[Two or three sentences about the idea.]</span></p>
+    <div class="panel" id="panel-tum2">
+      <div class="panel-inner">
+        <div class="wrap">
+          <dl class="ficha">
+            <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd>—</dd></div>
+            <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd>—</dd></div>
+            <div><dt class="label"><span class="es">superficie</span><span class="en">size</span></dt><dd>— m²</dd></div>
+            <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>20XX</dd></div>
+            <div><dt class="label"><span class="es">rol</span><span class="en">role</span></dt><dd>—</dd></div>
+          </dl>
+        </div>
+
+        <div class="strip" tabindex="0" role="region" aria-label="Proyecto TUM 2">
+          <div class="strip-inner">
+            <div class="box box-text">
+              <p><span class="es">[Dos o tres frases sobre la idea del proyecto.]</span><span class="en">[Two or three sentences about the idea.]</span></p>
+            </div>
+            <figure class="box box-img" style="--ar:4/3">
+              <div class="ph" data-ph-es="diagrama de la idea" data-ph-en="concept diagram"></div>
+              <figcaption class="label"><span class="es">diagrama — los pasos del proyecto</span><span class="en">diagram — the project's steps</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:3/4">
+              <div class="ph" data-ph-es="planta" data-ph-en="plan"></div>
+              <figcaption class="label"><span class="es">planta principal</span><span class="en">main floor plan</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:16/9">
+              <div class="ph" data-ph-es="imagen de cierre" data-ph-en="closing image"></div>
+              <figcaption class="label"><span class="es">contexto</span><span class="en">context</span></figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
-      <figure class="box box-img" style="--ar:16/9">
-        <div class="ph" data-ph-es="imagen principal" data-ph-en="hero image"></div>
-        <figcaption class="label"><span class="es">fig. 01 — vista general</span><span class="en">fig. 01 — general view</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:4/3">
-        <div class="ph" data-ph-es="diagrama de la idea" data-ph-en="concept diagram"></div>
-        <figcaption class="label"><span class="es">diagrama — los pasos del proyecto</span><span class="en">diagram — the project's steps</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:3/4">
-        <div class="ph" data-ph-es="planta" data-ph-en="plan"></div>
-        <figcaption class="label"><span class="es">planta principal</span><span class="en">main floor plan</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:16/9">
-        <div class="ph" data-ph-es="imagen de cierre" data-ph-en="closing image"></div>
-        <figcaption class="label"><span class="es">fig. 02 — contexto</span><span class="en">fig. 02 — context</span></figcaption>
-      </figure>
     </div>
-  </div>
+  </article>
 </section>
 
 <section class="section" id="utfsm">
@@ -262,43 +310,60 @@
       <h2>Chile</h2>
       <p class="sec-sub label">Universidad Técnica Federico Santa María</p>
     </header>
-
-    <div class="project-head reveal">
-      <h3 class="project-title"><span class="es">Proyecto UTFSM</span><span class="en">UTFSM project</span></h3>
-      <p class="project-loc">Valparaíso, Chile</p>
-    </div>
-    <dl class="ficha reveal">
-      <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd>—</dd></div>
-      <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd>—</dd></div>
-      <div><dt class="label"><span class="es">superficie</span><span class="en">size</span></dt><dd>— m²</dd></div>
-      <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>20XX</dd></div>
-      <div><dt class="label"><span class="es">rol</span><span class="en">role</span></dt><dd>—</dd></div>
-    </dl>
   </div>
 
-  <div class="strip reveal" tabindex="0" role="region" aria-label="Proyecto UTFSM">
-    <div class="strip-inner">
-      <div class="box box-text">
-        <p><span class="es">[Dos o tres frases sobre la idea del proyecto.]</span><span class="en">[Two or three sentences about the idea.]</span></p>
+  <article class="project reveal">
+    <div class="wrap">
+      <button class="cover" aria-expanded="false" aria-controls="panel-utfsm">
+        <div class="cover-img ph" data-ph-es="imagen principal" data-ph-en="hero image" style="--ar:16/9"></div>
+        <div class="cover-bar">
+          <div class="cover-id">
+            <h3 class="cover-title"><span class="es">Proyecto UTFSM</span><span class="en">UTFSM project</span></h3>
+            <p class="cover-loc">Valparaíso, Chile · 20XX</p>
+          </div>
+          <span class="cover-cue label">
+            <span class="cue-open"><span class="es">ver proyecto</span><span class="en">view project</span></span>
+            <span class="cue-close"><span class="es">cerrar</span><span class="en">close</span></span>
+            <span class="cue-icon" aria-hidden="true"></span>
+          </span>
+        </div>
+      </button>
+    </div>
+
+    <div class="panel" id="panel-utfsm">
+      <div class="panel-inner">
+        <div class="wrap">
+          <dl class="ficha">
+            <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd>—</dd></div>
+            <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd>—</dd></div>
+            <div><dt class="label"><span class="es">superficie</span><span class="en">size</span></dt><dd>— m²</dd></div>
+            <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>20XX</dd></div>
+            <div><dt class="label"><span class="es">rol</span><span class="en">role</span></dt><dd>—</dd></div>
+          </dl>
+        </div>
+
+        <div class="strip" tabindex="0" role="region" aria-label="Proyecto UTFSM">
+          <div class="strip-inner">
+            <div class="box box-text">
+              <p><span class="es">[Dos o tres frases sobre la idea del proyecto.]</span><span class="en">[Two or three sentences about the idea.]</span></p>
+            </div>
+            <figure class="box box-img" style="--ar:4/3">
+              <div class="ph" data-ph-es="diagrama de la idea" data-ph-en="concept diagram"></div>
+              <figcaption class="label"><span class="es">diagrama — los pasos del proyecto</span><span class="en">diagram — the project's steps</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:3/4">
+              <div class="ph" data-ph-es="planta" data-ph-en="plan"></div>
+              <figcaption class="label"><span class="es">planta principal</span><span class="en">main floor plan</span></figcaption>
+            </figure>
+            <figure class="box box-img" style="--ar:16/9">
+              <div class="ph" data-ph-es="imagen de cierre" data-ph-en="closing image"></div>
+              <figcaption class="label"><span class="es">contexto</span><span class="en">context</span></figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
-      <figure class="box box-img" style="--ar:16/9">
-        <div class="ph" data-ph-es="imagen principal" data-ph-en="hero image"></div>
-        <figcaption class="label"><span class="es">fig. 01 — vista general</span><span class="en">fig. 01 — general view</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:4/3">
-        <div class="ph" data-ph-es="diagrama de la idea" data-ph-en="concept diagram"></div>
-        <figcaption class="label"><span class="es">diagrama — los pasos del proyecto</span><span class="en">diagram — the project's steps</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:3/4">
-        <div class="ph" data-ph-es="planta" data-ph-en="plan"></div>
-        <figcaption class="label"><span class="es">planta principal</span><span class="en">main floor plan</span></figcaption>
-      </figure>
-      <figure class="box box-img" style="--ar:16/9">
-        <div class="ph" data-ph-es="imagen de cierre" data-ph-en="closing image"></div>
-        <figcaption class="label"><span class="es">fig. 02 — contexto</span><span class="en">fig. 02 — context</span></figcaption>
-      </figure>
     </div>
-  </div>
+  </article>
 </section>
 
 <section class="section" id="contacto">

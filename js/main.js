@@ -35,6 +35,53 @@
     observer.observe(el);
   });
 
+  /* ---- proyectos: abrir y cerrar ---- */
+  function openProject(project) {
+    var panel = project.querySelector(".panel");
+    var inner = project.querySelector(".panel-inner");
+    project.classList.add("is-open");
+    project.querySelector(".cover").setAttribute("aria-expanded", "true");
+    panel.style.height = inner.offsetHeight + "px";
+    panel.addEventListener("transitionend", function done(e) {
+      if (e.propertyName !== "height" || e.target !== panel) return;
+      panel.removeEventListener("transitionend", done);
+      /* a auto para que el contenido pueda crecer o reajustarse solo */
+      if (project.classList.contains("is-open")) panel.style.height = "auto";
+    });
+  }
+
+  function closeProject(project) {
+    var panel = project.querySelector(".panel");
+    var inner = project.querySelector(".panel-inner");
+    /* de auto a px antes de animar, si no el navegador no interpola */
+    panel.style.height = inner.offsetHeight + "px";
+    void panel.offsetHeight;
+    project.classList.remove("is-open");
+    project.querySelector(".cover").setAttribute("aria-expanded", "false");
+    requestAnimationFrame(function () { panel.style.height = "0px"; });
+  }
+
+  document.querySelectorAll(".project .cover").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var project = btn.closest(".project");
+      var wasOpen = project.classList.contains("is-open");
+
+      document.querySelectorAll(".project.is-open").forEach(closeProject);
+
+      if (wasOpen) return;
+
+      openProject(project);
+
+      /* al cerrarse otro proyecto la página se corre, así que reencuadramos */
+      requestAnimationFrame(function () {
+        var nav = document.querySelector(".nav");
+        var offset = (nav ? nav.offsetHeight : 0) + 16;
+        var top = btn.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: "smooth" });
+      });
+    });
+  });
+
   /* ---- tiras horizontales: arrastrar con el mouse ---- */
   document.querySelectorAll(".strip").forEach(function (strip) {
     var down = false, startX = 0, startScroll = 0, moved = 0;
