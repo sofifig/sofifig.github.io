@@ -194,6 +194,8 @@ html[data-lang="en"] .lang-toggle .opt-en { color: var(--on-accent); font-weight
   letter-spacing: -0.025em;
   line-height: 1.05;
 }
+/* sólo la inicial en mayúscula, no cada palabra */
+.section-head h2::first-letter { text-transform: uppercase; }
 
 .sec-sub { color: var(--muted); margin-left: auto; }
 
