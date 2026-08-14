@@ -225,23 +225,20 @@ html[data-lang="en"] .lang-toggle .opt-en { color: var(--on-accent); font-weight
 html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 
 /* ---- quién soy ---- */
-.about-text .lead {
-  font-size: clamp(1.4rem, 3.2vw, 2.2rem);
-  font-weight: 400;
-  line-height: 1.3;
-  letter-spacing: -0.018em;
-  max-width: 18em;
-  margin-bottom: 1.5rem;
+/* biografía a la izquierda, currículum a la derecha */
+.about {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.9fr) 1.5fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
 }
-.about-text .lead b { font-weight: 700; }
 
-.about-text .lead-2 {
-  max-width: 46em;
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--muted);
+.about-text .bio {
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 38ch;
 }
-.about-text .lead-2 b { color: var(--ink); font-weight: 500; }
+.about-text .bio + .bio { margin-top: 1rem; }
 
 .timeline { list-style: none; margin-top: 2.2rem; border-top: 1px solid var(--line); }
 .timeline li {
@@ -257,10 +254,9 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 /* ---- currículum ---- */
 .cv {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
-  gap: clamp(2.5rem, 4vw, 3.5rem) clamp(2rem, 4.5vw, 3.5rem);
-  margin-top: clamp(3rem, 6vw, 5rem);
-  padding-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: clamp(2rem, 3.5vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+  padding-top: 0.6rem;
   border-top: 1.5px solid var(--ink);
 }
 
@@ -524,8 +520,7 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
   .nav { gap: 0.8rem; }
   .nav-links { gap: 0.9rem; }
   .nav-links b { display: none; }
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .portrait { max-width: 230px; }
+  .about { grid-template-columns: 1fr; gap: 2.5rem; }
   /* en móvil no hay cursor que pasar por encima: el aviso queda siempre visible */
   .meta-cue { opacity: 1; }
   .sec-sub { margin-left: 0; width: 100%; }
