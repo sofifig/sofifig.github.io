@@ -459,25 +459,33 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 .set-bar {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-top: 0.6rem;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+  max-width: none;
+  white-space: nowrap;
 }
 .set-btn {
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   flex: 0 0 auto;
   border: 1.2px solid var(--line);
   background: none;
   color: var(--muted);
   cursor: pointer;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1;
   transition: border-color 0.2s, color 0.2s;
 }
 .set-btn:hover { border-color: var(--accent); color: var(--accent); }
-.set-count { color: var(--accent); font-variant-numeric: tabular-nums; }
-.set-cap { color: var(--muted); }
+.set-count {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.set-cap { font-size: 13px; color: var(--ink); }
 
 /* el resto del contenido no existe hasta abrir */
 .box-extra { display: none; }
