@@ -319,6 +319,16 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 .cv-more a:hover { color: var(--accent); }
 .cv-more-arrow { color: var(--accent); font-size: 15px; }
 
+/* mientras el CV y el contacto no sean públicos */
+.cv-more-soon {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--muted);
+  border-bottom: 1.5px solid var(--line);
+  padding-bottom: 0.25rem;
+}
+.c-pending { font-size: 15px; color: var(--muted); }
+
 /* ---- palabras ---- */
 .words { margin-top: 4.5rem; }
 .words-note { color: var(--muted); margin-bottom: 1.2rem; }
