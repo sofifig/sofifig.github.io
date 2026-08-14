@@ -2,7 +2,7 @@
   --paper: #fbf9f4;
   --paper-2: #f2eee5;
   --ink: #0f0f0e;
-  --muted: #7a746a;
+  --muted: #6e685e;
   --line: #ded8cc;
   --hatch: #e2dccf;
   --accent: #7b0e0e;
@@ -40,8 +40,8 @@ html[data-lang="en"] .es { display: none; }
    etiquetas 700 chicas y apretadas · títulos 200/300 grandes y abiertos */
 .label {
   font-weight: 700;
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  font-size: 9px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   line-height: 1.5;
 }
@@ -126,10 +126,10 @@ html[data-lang="en"] .lang-toggle .opt-en { color: var(--on-accent); font-weight
 .hero-kicker { color: var(--muted); margin-bottom: 1.4rem; }
 
 .hero-name {
-  font-size: clamp(2.4rem, 8.5vw, 6rem);
+  font-size: clamp(2.6rem, 10vw, 7.5rem);
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 0.98;
+  letter-spacing: -0.035em;
+  line-height: 0.94;
 }
 
 .hero-role {
@@ -189,10 +189,10 @@ html[data-lang="en"] .lang-toggle .opt-en { color: var(--on-accent); font-weight
 .sec-n { font-weight: 700; font-size: 11px; letter-spacing: 0.1em; color: var(--accent); }
 
 .section-head h2 {
-  font-size: clamp(1.7rem, 4.5vw, 2.8rem);
+  font-size: clamp(1.9rem, 5.5vw, 3.4rem);
   font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
 }
 
 .sec-sub { color: var(--muted); margin-left: auto; }
@@ -235,9 +235,10 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 .portrait figcaption { margin-top: 0.6rem; color: var(--muted); }
 
 .about-text .lead {
-  font-size: clamp(1.15rem, 2.3vw, 1.5rem);
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.45;
+  letter-spacing: -0.012em;
   letter-spacing: -0.01em;
   margin-bottom: 1.3rem;
 }
@@ -254,6 +255,53 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 }
 .t-year { font-weight: 700; letter-spacing: 0.06em; color: var(--accent); min-width: 8em; }
 .t-what { font-weight: 400; }
+
+/* ---- currículum ---- */
+.cv {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: clamp(2.5rem, 4vw, 3.5rem) clamp(2rem, 5vw, 4.5rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-top: 2rem;
+  border-top: 1.5px solid var(--ink);
+}
+
+.cv-h {
+  color: var(--accent);
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.1rem;
+}
+.cv-h-second { margin-top: 2.2rem; }
+
+.cv-list { list-style: none; display: flex; flex-direction: column; gap: 1.4rem; }
+
+.cv-list li {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0 1rem;
+  align-items: baseline;
+}
+
+.cv-when {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.cv-what { display: flex; flex-direction: column; gap: 0.2rem; }
+.cv-what b { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+.cv-where { font-size: 13px; color: var(--muted); }
+.cv-note { font-size: 12.5px; color: var(--muted); line-height: 1.45; }
+
+/* lo premiado y los nombres que abren puertas, en rojo */
+.is-award { color: var(--accent); }
+
+.cv-tools { font-size: 13px; line-height: 1.75; color: var(--muted); }
+.cv-tools b { color: var(--ink); font-weight: 500; }
+.cv-tools.is-second { margin-top: 0.4rem; font-size: 12.5px; }
 
 /* ---- palabras ---- */
 .words { margin-top: 4.5rem; }
