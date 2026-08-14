@@ -137,8 +137,13 @@
     strip.addEventListener("pointercancel", release);
     strip.addEventListener("pointerleave", release);
 
+    /* si venia de arrastrar, el clic no debe activar nada de adentro */
     strip.addEventListener("click", function (e) {
-      if (moved > 4) { e.preventDefault(); moved = 0; }
+      if (moved > 4) {
+        e.preventDefault();
+        e.stopPropagation();
+        moved = 0;
+      }
     }, true);
   });
 })();
