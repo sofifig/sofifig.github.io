@@ -225,20 +225,29 @@ html[data-lang="en"] .lang-toggle .opt-en { color: var(--on-accent); font-weight
 html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 
 /* ---- quién soy ---- */
-/* biografía a la izquierda, currículum a la derecha */
+/* biografía a la izquierda, currículum a la derecha.
+   Esta sección se aprieta a propósito para caber en una pantalla. */
 .about {
   display: grid;
-  grid-template-columns: minmax(250px, 0.9fr) 1.5fr;
-  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(260px, 1.05fr) 1.3fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
   align-items: start;
 }
 
+#quien-soy { padding-top: 3.25rem; padding-bottom: 1.5rem; }
+#quien-soy .section-head { margin-bottom: 1.5rem; }
+
 .about-text .bio {
-  font-size: 16px;
-  line-height: 1.65;
-  max-width: 38ch;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 40ch;
 }
-.about-text .bio + .bio { margin-top: 1rem; }
+.about-text .bio + .bio { margin-top: 0.9rem; }
+
+/* herramientas e idiomas viven bajo la biografía, para emparejar columnas */
+.cv-block-left { margin-top: 1.5rem; }
+.cv-block-left .cv-tools { max-width: 42ch; }
+#quien-soy .cv-more { margin-top: 1.25rem; }
 
 .timeline { list-style: none; margin-top: 2.2rem; border-top: 1px solid var(--line); }
 .timeline li {
@@ -254,7 +263,7 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 /* ---- currículum ---- */
 .cv {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: clamp(2rem, 3.5vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
   padding-top: 0.6rem;
   border-top: 1.5px solid var(--ink);
@@ -293,7 +302,7 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 /* lo premiado y los nombres que abren puertas, en rojo */
 .is-award { color: var(--accent); }
 
-.cv-tools { font-size: 13px; line-height: 1.75; color: var(--muted); }
+.cv-tools { font-size: 13px; line-height: 1.6; color: var(--muted); }
 .cv-tools b { color: var(--ink); font-weight: 500; }
 .cv-tools.is-second { margin-top: 0.4rem; font-size: 12.5px; }
 
