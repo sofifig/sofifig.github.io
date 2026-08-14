@@ -259,8 +259,8 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 /* ---- currículum ---- */
 .cv {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: clamp(2.5rem, 4vw, 3.5rem) clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: clamp(2.5rem, 4vw, 3.5rem) clamp(2rem, 4.5vw, 3.5rem);
   margin-top: clamp(3rem, 6vw, 5rem);
   padding-top: 2rem;
   border-top: 1.5px solid var(--ink);
@@ -302,6 +302,22 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 .cv-tools { font-size: 13px; line-height: 1.75; color: var(--muted); }
 .cv-tools b { color: var(--ink); font-weight: 500; }
 .cv-tools.is-second { margin-top: 0.4rem; font-size: 12.5px; }
+
+.cv-more { margin-top: 2rem; }
+.cv-more a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--accent);
+  padding-bottom: 0.25rem;
+  transition: color 0.2s;
+}
+.cv-more a:hover { color: var(--accent); }
+.cv-more-arrow { color: var(--accent); font-size: 15px; }
 
 /* ---- palabras ---- */
 .words { margin-top: 4.5rem; }
