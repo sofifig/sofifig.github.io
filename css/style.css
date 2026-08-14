@@ -10,6 +10,9 @@
   --maxw: 1140px;
   --pad: 1.5rem;
   --strip-h: clamp(300px, 58vh, 520px);
+  --cover-h: clamp(150px, 17vw, 250px);
+  --meta-w: clamp(150px, 18vw, 220px);
+  --strip-gap: clamp(1.5rem, 3.5vw, 3.5rem);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -196,6 +199,7 @@ html[data-lang="en"] .lang-toggle .opt-en { color: var(--ink); font-weight: 700;
 
 /* ---- marcador de imagen pendiente ---- */
 .ph {
+  display: block;
   aspect-ratio: var(--ar, 16 / 9);
   position: relative;
   border: 1px solid var(--line);
@@ -270,137 +274,117 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 }
 .word:hover { color: var(--accent); font-weight: 700; }
 
-/* ---- proyecto: la fila del listado ----
-   Como en BIG: la imagen centrada en la página y la ficha corta
-   alineada a la derecha, justo a su izquierda. Mucho aire alrededor. */
+/* ---- proyecto ----
+   Una sola tira horizontal que sirve para los dos estados.
+   Cerrada: la ficha corta a la derecha y la imagen chica centrada en la página.
+   Abierta: la imagen crece a la altura completa, la tira se corre a la izquierda
+   y el resto del contenido aparece hacia la derecha. */
 .project { margin-bottom: clamp(2.5rem, 6vw, 5rem); }
 
-.cover {
-  display: grid;
-  grid-template-columns: 1fr clamp(250px, 31vw, 420px) 1fr;
-  gap: 0 clamp(1rem, 2.5vw, 2rem);
-  align-items: start;
-  width: 100%;
-  padding: 0;
-  border: none;
-  background: none;
-  font-family: inherit;
-  color: inherit;
+.box-meta {
+  width: var(--meta-w);
   cursor: pointer;
-}
-
-.cover-side {
-  grid-column: 1;
-  justify-self: end;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   text-align: right;
-  gap: 0.15rem;
   padding-top: 0.2rem;
 }
 
-.cover-icon {
+.meta-icon {
   width: 38px;
   height: 38px;
-  margin-bottom: 0.75rem;
   background: var(--ink);
-  border: none;
+  margin-bottom: 0.75rem;
 }
-.cover-icon::after { content: none; }
 
-.cover-title {
+.meta-title {
   font-size: clamp(0.95rem, 1.4vw, 1.05rem);
   font-weight: 500;
   line-height: 1.3;
-  max-width: 24ch;
 }
 
-.cover-loc {
+.meta-loc {
   font-size: 11px;
+  font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--muted);
+  margin-top: 0.15rem;
 }
 
-.cover-img {
-  grid-column: 2;
-  transition: opacity 0.3s ease;
+/* la ficha sólo aparece al abrir */
+.box-meta .ficha {
+  display: none;
+  width: 100%;
+  margin-top: 1.3rem;
+  border-top: 1px solid var(--ink);
 }
-.cover:hover .cover-img { opacity: 0.85; }
+.project.is-open .box-meta .ficha { display: block; animation: fadein 0.45s ease 0.2s both; }
+.box-meta .ficha > div { padding: 0.45rem 0; border-bottom: 1px solid var(--line); }
+.box-meta .ficha dt { color: var(--muted); font-size: 9px; }
+.box-meta .ficha dd { font-size: 12px; font-weight: 500; margin-top: 0.1rem; }
 
-.cover-cue {
+.meta-cue {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 0.85rem;
+  margin-top: 1rem;
   color: var(--muted);
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.25s ease, color 0.25s ease;
 }
-.cover:hover .cover-cue,
-.cover:focus-visible .cover-cue,
-.project.is-open .cover-cue { opacity: 1; }
-.cover:hover .cover-cue { color: var(--accent); }
+.project:hover .meta-cue,
+.project.is-open .meta-cue { opacity: 1; }
+.project:hover .meta-cue { color: var(--accent); }
 
 .cue-close { display: none; }
 .project.is-open .cue-open { display: none; }
 .project.is-open .cue-close { display: inline; }
 
-.cue-icon {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  border: 1.2px solid currentColor;
-  border-radius: 50%;
-  flex: 0 0 auto;
+/* la imagen principal: el botón que abre y cierra */
+.box-hero {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
 }
-.cue-icon::before,
-.cue-icon::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  right: 5px;
-  height: 1.2px;
-  background: currentColor;
-  transform: translateY(-50%);
-  transition: transform 0.35s ease;
+.box-hero .ph {
+  height: var(--cover-h);
+  width: auto;
+  aspect-ratio: 16 / 10;
+  transition: height 0.55s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
-.cue-icon::after { transform: translateY(-50%) rotate(90deg); }
-.project.is-open .cue-icon::after { transform: translateY(-50%) rotate(0deg); }
+/* crece un poco antes de abrirse, como en BIG */
+.project:not(.is-open) .box-hero:hover .ph { height: calc(var(--cover-h) * 1.12); }
+.project.is-open .box-hero .ph { height: var(--strip-h); aspect-ratio: 16 / 10; }
 
-/* el despliegue: el alto lo fija el JS al abrir y vuelve a auto al terminar */
-.panel {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.panel-inner > * { opacity: 0; transition: opacity 0.3s ease; }
-.project.is-open .panel-inner > * { opacity: 1; transition-delay: 0.25s; }
-.panel-inner > .wrap { padding-top: 2.2rem; }
-
-.ficha {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 0 2rem;
-  border-top: 1px solid var(--ink);
-  margin-bottom: 2rem;
-}
-.ficha > div { padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
-.ficha dt { color: var(--muted); }
-.ficha dd { font-size: 14px; font-weight: 500; margin-top: 0.15rem; }
+/* el resto del contenido no existe hasta abrir */
+.box-extra { display: none; }
+.project.is-open .box-extra { display: block; animation: fadein 0.5s ease 0.25s both; }
 
 /* ---- tira horizontal (estilo BIG) ---- */
 .strip {
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
-  padding: 0 max(var(--pad), calc((100vw - var(--maxw)) / 2)) 1.5rem;
-  cursor: grab;
+  padding-top: 0;
+  padding-bottom: 1.5rem;
+  padding-right: var(--pad);
+  /* cerrada, el relleno izquierdo deja la imagen justo en el centro de la página */
+  padding-left: max(var(--pad), calc(50vw - var(--meta-w) - var(--strip-gap) - var(--cover-h) * 0.8));
   scrollbar-width: thin;
   scrollbar-color: var(--line) transparent;
   overscroll-behavior-x: contain;
+  transition: padding-left 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project.is-open .strip {
+  overflow-x: auto;
+  cursor: grab;
+  padding-left: max(var(--pad), calc((100vw - var(--maxw)) / 2));
+  padding-right: max(var(--pad), calc((100vw - var(--maxw)) / 2));
 }
 .strip.is-dragging { cursor: grabbing; }
 .strip.is-dragging * { pointer-events: none; }
@@ -414,7 +398,7 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
   display: flex;
   flex-wrap: nowrap;
   align-items: flex-start;
-  gap: clamp(1.5rem, 3.5vw, 3.5rem);
+  gap: var(--strip-gap);
   width: max-content;
 }
 
@@ -488,11 +472,8 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
   .nav-links b { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .portrait { max-width: 230px; }
-  /* en móvil la fila se apila: ficha arriba a la izquierda, imagen abajo */
-  .cover { grid-template-columns: 1fr; gap: 0.9rem; }
-  .cover-side { grid-column: 1; justify-self: start; align-items: flex-start; text-align: left; }
-  .cover-img { grid-column: 1; }
-  .cover-cue { opacity: 1; }
+  /* en móvil no hay cursor que pasar por encima: el aviso queda siempre visible */
+  .meta-cue { opacity: 1; }
   .sec-sub { margin-left: 0; width: 100%; }
   .rotulo-lam { margin-left: 0; }
 }
