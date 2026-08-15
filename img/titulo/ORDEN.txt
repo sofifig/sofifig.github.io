@@ -1,0 +1,59 @@
+ORDEN DEL PROYECTO DE TÍTULO
+Edita este archivo y avísame. Yo lo leo y lo monto tal cual.
+
+
+CÓMO SE ESCRIBE
+---------------
+
+Cada línea es una pieza del recorrido, de izquierda a derecha.
+
+  34              una imagen sola
+  3 + 5 + 6       varias en un mismo lugar: se hojean con un clic
+  TEXTO  ...      un panel de texto; escribe el texto después
+  23/2            la parte 2 de una imagen que se cortó en varias
+
+Los números son los del catálogo que te mandé.
+Para sacar una pieza, borra su línea. Para moverla, cambia la línea de sitio.
+
+
+ORDEN ACTUAL
+------------
+
+34
+TEXTO  ¿Cómo pueden los espacios de la cotidianidad dignificar la experiencia del estudiante foráneo en Valparaíso? El 42% de quienes estudian en la Casa Central de la UTFSM viene de otra región. La respuesta del proyecto es una decisión: la mejor orientación y las vistas al mar son para los espacios comunes, no para las habitaciones.
+14
+3 + 5 + 6 + 4
+TEXTO  La primera planta funciona como un social hub de doble temporalidad: una placa polivalente de gestión mixta que permite arrendar espacios según la demanda, y que sostiene económicamente el proyecto.
+1
+11 + 16 + 17
+12
+13
+38 + 7 + 2
+23/1 + 23/2 + 23/3 + 23/4 + 23/5
+
+
+QUÉ ES CADA UNA DE LAS QUE ESTÁN PUESTAS
+----------------------------------------
+
+  34    el proyecto de noche desde el borde costero   (portada)
+  14    axonométrica del proyecto en el cerro          (emplazamiento)
+  3     01 eje central
+  5     02 orientación
+  6     03 liberación
+  4     04 suspensión
+  1     planta de la microcomunidad
+  11    planta nivel −1, cafetería y mirador
+  16    planta con circulaciones y vegetación
+  17    planta de techumbre y zonificación exterior
+  12    corte A-A′
+  13    corte B-B′
+  38    render interior de la habitación
+  7     planta tipo de dos habitaciones
+  2     corte tipo de la habitación
+  23    los cinco tipos de habitación (cortada en 23/1 a 23/5)
+
+
+PENDIENTE
+---------
+
+La superficie del proyecto sigue en blanco en la ficha. ¿Cuántos m² son?
