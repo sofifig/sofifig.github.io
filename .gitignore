@@ -6,3 +6,8 @@ cv/
 # los originales pesados se quedan en el disco, no en el repo
 img/**/*.pptx
 img/**/*.pdf
+
+# originales de trabajo: se quedan en el disco
+img/titulo/plan/
+img/titulo/originales/
+desktop.ini
