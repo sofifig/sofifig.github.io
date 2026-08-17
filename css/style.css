@@ -1,12 +1,13 @@
 :root {
-  --paper: #fbf9f4;
-  --paper-2: #f2eee5;
-  --ink: #0f0f0e;
-  --muted: #6e685e;
-  --line: #ded8cc;
-  --hatch: #e2dccf;
-  --accent: #7b0e0e;
-  --on-accent: #fdfbf7;
+  /* colores invertidos: el fondo pasa a negro grafito y el acento al crema */
+  --paper: #1a1a18;
+  --paper-2: #24241f;
+  --ink: #fbf9f4;
+  --muted: #a39c8e;
+  --line: #38372f;
+  --hatch: #2f2e27;
+  --accent: #fdfbf7;
+  --on-accent: #14140f;
   --sans: "Familjen Grotesk", system-ui, sans-serif;
   --maxw: 1140px;
   --pad: 1.5rem;
