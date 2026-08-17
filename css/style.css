@@ -2,14 +2,15 @@
   /* Una sola familia cálida en cinco pasos, no blanco contra negro.
      Los dos extremos se suavizan: el fondo no llega al negro y el texto
      no llega al blanco, así el contraste baja de 16,6 a 12,5. */
-  --paper: #232220;
-  --paper-2: #2c2b27;
-  --ink: #e8e4d9;
-  --muted: #999384;
-  --line: #3a3833;
-  --hatch: #302f2a;
-  --accent: #ede8dc;
-  --on-accent: #232220;
+  /* toda la familia en el mismo tinte oliva, alrededor de 57 grados */
+  --paper: #232319;
+  --paper-2: #2c2c21;
+  --ink: #e5e4d3;
+  --muted: #979885;
+  --line: #3a3a30;
+  --hatch: #313129;
+  --accent: #ecebdb;
+  --on-accent: #232319;
   --sans: "Familjen Grotesk", system-ui, sans-serif;
   --maxw: 1140px;
   --pad: 1.5rem;
