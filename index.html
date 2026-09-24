@@ -36,11 +36,22 @@
 
   <div class="hero-horizon reveal">
     <svg viewBox="0 0 1000 160" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Perfil de Chile: el océano Pacífico, la costa y la cordillera de los Andes">
-      <path id="horizonPath" d="M0,142 C50,139 100,144 150,141 C200,138 250,143 300,141 C330,140 355,141 378,139 C412,133 438,120 468,98 L520,120 L584,58 L634,96 L714,30 L774,86 L838,50 L900,108 C934,122 966,128 1000,131"
-        fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-      <path class="sea-line" d="M40,154 C80,152 120,156 160,154 C200,152 240,156 280,154" fill="none" stroke="currentColor" stroke-width="0.9"/>
-      <path class="sea-line" d="M96,166 C126,164 156,168 186,166 C216,164 236,167 256,166" fill="none" stroke="currentColor" stroke-width="0.7"/>
+      <path id="horizonPath" pathLength="1" d="M0,142 C50,139 100,144 150,141 C200,138 250,143 300,141 C330,140 355,141 378,139 C412,133 438,120 468,98 L520,120 L584,58 L634,96 L714,30 L774,86 L838,50 L900,108 C934,122 966,128 1000,131"
+        fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+      <path class="sea-line" pathLength="1" d="M40,154 C80,152 120,156 160,154 C200,152 240,156 280,154" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+      <path class="sea-line" pathLength="1" d="M96,166 C126,164 156,168 186,166 C216,164 236,167 256,166" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round"/>
       <circle cx="378" cy="139" r="3.5" class="dot"/>
+
+      <!-- Lápiz de grafito: la punta (la mina) está en (0,0) y el cuerpo sube
+           hacia la derecha, como la mano de quien dibuja. main.js lo va
+           llevando por el trazo, siempre pegado a la punta de la línea.
+           El tono sube hacia la punta —cuerpo oscuro, madera clara, mina
+           brillante— para que el ojo se vaya a donde está pasando la cosa. -->
+      <g id="heroPencil" class="pencil" transform="translate(0,142)" aria-hidden="true">
+        <path class="pencil-body" d="M0,0 L2.42,-8.99 L6.32,-21.75 L34.32,-70.25 L43.68,-64.85 L15.68,-16.35 L6.58,-6.59 Z"/>
+        <path class="pencil-cut" d="M2.42,-8.99 L6.58,-6.59 M6.32,-21.75 L15.68,-16.35 M27.32,-58.12 L36.68,-52.72"/>
+        <path class="pencil-ridge" d="M9.79,-19.75 L37.79,-68.25"/>
+      </g>
     </svg>
   </div>
 
@@ -157,7 +168,6 @@
             <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>2026</dd></div>
             <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd><span class="es">Proyecto de título</span><span class="en">Thesis</span></dd></div>
             <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd><span class="es">Residencia estudiantil · social hub</span><span class="en">Student housing · social hub</span></dd></div>
-            <div><dt class="label"><span class="es">rol</span><span class="en">role</span></dt><dd><span class="es">individual</span><span class="en">individual</span></dd></div>
           </dl>
           <span class="meta-cue label">
             <span class="cue-open"><span class="es">ver proyecto →</span><span class="en">view project →</span></span>
@@ -372,13 +382,12 @@
       <div class="strip-inner">
         <div class="box box-meta">
           <span class="meta-icon" aria-hidden="true"></span>
-          <span class="meta-title" role="heading" aria-level="3"><span class="es">Proyecto TUM 1</span><span class="en">TUM project 1</span></span>
-          <span class="meta-loc">München, <span class="es">Alemania</span><span class="en">Germany</span></span>
+          <span class="meta-title" role="heading" aria-level="3">CohabiTiles — Nest and Flow</span>
+          <span class="meta-loc">Ingolstadt, <span class="es">Alemania</span><span class="en">Germany</span></span>
           <dl class="ficha">
-            <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>20XX</dd></div>
-            <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd>—</dd></div>
-            <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd>—</dd></div>
-            <div><dt class="label"><span class="es">rol</span><span class="en">role</span></dt><dd>—</dd></div>
+            <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>2025</dd></div>
+            <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd><span class="es">Printed Habitats · Fabricación Digital</span><span class="en">Printed Habitats · Digital Fabrication</span></dd></div>
+            <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd><span class="es">Sistema de fachada y techumbre</span><span class="en">Façade and roof system</span></dd></div>
           </dl>
           <span class="meta-cue label">
             <span class="cue-open"><span class="es">ver proyecto →</span><span class="en">view project →</span></span>
@@ -387,27 +396,206 @@
         </div>
 
         <button class="box box-hero" aria-expanded="false">
-          <span class="ph" data-ph-es="imagen principal" data-ph-en="hero image"></span>
+          <img src="img/tum-1/01-portada.webp" width="1764" height="1101"
+               alt="Fachada con las tejas CohabiTiles y vencejos entrando a los nidos">
         </button>
 
         <div class="box box-text box-extra">
-          <p><span class="es">[Dos o tres frases sobre la idea del proyecto.]</span><span class="en">[Two or three sentences about the idea.]</span></p>
+          <p><span class="es">CohabiTiles convierte la renovación de una fachada en hábitat: un sistema modular de tejas de arcilla impresas en 3D para las dos aves más frecuentes de Ingolstadt, el gorrión común y el vencejo. Son <b>dos piezas complementarias</b>: la que aloja el nido y la que ventila y da sombra.</span><span class="en">CohabiTiles turns a façade renovation into habitat: a modular system of 3D-printed clay tiles for the two most frequent birds in Ingolstadt, the house sparrow and the common swift. <b>Two complementary pieces</b>: one holds the nest, the other ventilates and shades.</span></p>
         </div>
-        <figure class="box box-img box-extra" style="--ar:4/3">
-          <div class="ph" data-ph-es="diagrama de la idea" data-ph-en="concept diagram"></div>
-          <figcaption class="label"><span class="es">diagrama — los pasos del proyecto</span><span class="en">diagram — the project's steps</span></figcaption>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.540">
+          <div class="set-frame">
+            <img src="img/tum-1/02-especie-1.webp" width="1679" height="1100" loading="lazy" alt="Lámina del gorrión común con sus requisitos de nido">
+            <img src="img/tum-1/02-especie-2.webp" width="1696" height="1101" loading="lazy" alt="Lámina del vencejo común con sus requisitos de nido">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">gorrión común · quién habita</span><span class="en">house sparrow · who lives there</span>
+              <span class="es">vencejo común · quién habita</span><span class="en">common swift · who lives there</span>
+            </span>
+          </figcaption>
         </figure>
-        <figure class="box box-img box-extra" style="--ar:3/4">
-          <div class="ph" data-ph-es="planta" data-ph-en="plan"></div>
-          <figcaption class="label"><span class="es">planta principal</span><span class="en">main floor plan</span></figcaption>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.408">
+          <div class="set-frame">
+            <img src="img/tum-1/03-comportamiento-1.webp" width="1550" height="1101" loading="lazy" alt="Diagrama de las trayectorias de vuelo de ambas especies">
+            <img src="img/tum-1/03-comportamiento-2.webp" width="1550" height="1101" loading="lazy" alt="Diagrama de cómo cada ave entra al nido">
+            <img src="img/tum-1/03-comportamiento-3.webp" width="1526" height="1101" loading="lazy" alt="Croquis de las cualidades de la teja monje y monja">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">trayectoria de vuelo — el vencejo llega alto, el gorrión salta</span><span class="en">flight path — the swift arrives high, the sparrow hops</span>
+              <span class="es">entrada al nido — abertura ovalada para uno, circular para el otro</span><span class="en">entering the nest — oval opening for one, circular for the other</span>
+              <span class="es">la teja monje y monja — las cualidades que se adoptan</span><span class="en">the monk-and-nun tile — the qualities taken from it</span>
+            </span>
+          </figcaption>
         </figure>
-        <figure class="box box-img box-extra" style="--ar:16/9">
-          <div class="ph" data-ph-es="corte" data-ph-en="section"></div>
-          <figcaption class="label"><span class="es">corte transversal</span><span class="en">cross section</span></figcaption>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 2.109">
+          <div class="set-frame">
+            <img src="img/tum-1/04-concepto-1.webp" width="2283" height="1101" loading="lazy" alt="Las dos piezas montadas juntas en la fachada, en axonométrica y en corte">
+            <img src="img/tum-1/04-concepto-2.webp" width="2322" height="1101" loading="lazy" alt="La pieza Nest aislada, con el nido en su interior">
+            <img src="img/tum-1/04-concepto-3.webp" width="2294" height="1101" loading="lazy" alt="La pieza Flow aislada, con el aire pasando entre las tejas">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">Nest y Flow — las dos piezas alternadas</span><span class="en">Nest and Flow — the two pieces alternating</span>
+              <span class="es">Nest — la que aloja el nido</span><span class="en">Nest — the one that holds the nest</span>
+              <span class="es">Flow — la que ventila y da sombra</span><span class="en">Flow — the one that ventilates and shades</span>
+            </span>
+          </figcaption>
         </figure>
-        <figure class="box box-img box-extra" style="--ar:16/9">
-          <div class="ph" data-ph-es="imagen de cierre" data-ph-en="closing image"></div>
-          <figcaption class="label"><span class="es">contexto</span><span class="en">context</span></figcaption>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 0.809">
+          <div class="set-frame">
+            <img src="img/tum-1/05-parametro-1.webp" width="849" height="1101" loading="lazy" alt="Tabla paramétrica del Nest: la abertura cambia según el ave">
+            <img src="img/tum-1/05-parametro-2.webp" width="891" height="1101" loading="lazy" alt="Tabla paramétrica del Flow: aire, calor y sombra en cuatro grados">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">el parámetro del Nest — la abertura se abre según el ave</span><span class="en">the Nest parameter — the opening adapts to the bird</span>
+              <span class="es">el parámetro del Flow — el mismo elemento gradúa aire, calor y sombra</span><span class="en">the Flow parameter — one element grades air, heat and shade</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="box box-img box-extra">
+          <img src="img/tum-1/06-mantencion.webp" width="2775" height="1100" loading="lazy"
+               alt="Los tres pasos del ciclo de mantención de la teja">
+          <figcaption class="label"><span class="es">la mantención — la tapa se saca, se limpia y vuelve</span><span class="en">maintenance — the cap slides out, is cleaned, goes back</span></figcaption>
+        </figure>
+
+        <figure class="box box-img box-extra">
+          <img src="img/tum-1/07-clima-elemento.webp" width="1459" height="1101" loading="lazy"
+               alt="Análisis de horas de sol sobre una teja">
+          <figcaption class="label"><span class="es">horas de sol sobre el elemento</span><span class="en">sun hours on the element</span></figcaption>
+        </figure>
+
+        <div class="box box-text box-extra">
+          <p><span class="es">El caso de prueba es la <b>torre Dalwigk</b>, un depósito de agua de 1916 que hoy está vacío. El análisis de sol y viento por orientación decide dónde va cada abertura: el gorrión al norte y al este, activo de mañana; el vencejo al norte y al poniente, activo al atardecer.</span><span class="en">The test case is the <b>Dalwigk Tower</b>, a 1916 water tower that now stands unused. Sun and wind analysis by orientation decides where each opening goes: sparrows north and east, active in the morning; swifts north and west, active at dusk.</span></p>
+        </div>
+
+        <figure class="box box-img box-extra">
+          <img src="img/tum-1/08-torre.webp" width="786" height="1101" loading="lazy"
+               alt="La torre Dalwigk con la fachada de tejas terminada y aves alrededor">
+          <figcaption class="label"><span class="es">torre Dalwigk, Ingolstadt — la fachada terminada</span><span class="en">Dalwigk Tower, Ingolstadt — the finished façade</span></figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.892">
+          <div class="set-frame">
+            <img src="img/tum-1/09-clima-fachada-1.webp" width="1541" height="1101" loading="lazy" alt="Análisis de sol y de viento sobre la elevación de la torre">
+            <img src="img/tum-1/09-clima-fachada-2.webp" width="2083" height="1101" loading="lazy" alt="Mapeo de los elementos en la fachada y franjas de actividad de cada ave">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">sol y viento por orientación</span><span class="en">sun and wind by orientation</span>
+              <span class="es">mapeo de los elementos — dónde cae cada nido</span><span class="en">element mapping — where each nest lands</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.911">
+          <div class="set-frame">
+            <img src="img/tum-1/10-construccion-1.webp" width="1541" height="1101" loading="lazy" alt="Axonométrica de la subestructura y zoom del riel que sostiene las tejas">
+            <img src="img/tum-1/10-construccion-2.webp" width="2104" height="1101" loading="lazy" alt="Elevación del conjunto de la torre y el edificio">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">subestructura — cada teja se cuelga de un riel y se saca de a una</span><span class="en">substructure — each tile hangs on a rail and comes out on its own</span>
+              <span class="es">el conjunto — torre y cuartel, elevación</span><span class="en">the ensemble — tower and barracks, elevation</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 0.752">
+          <div class="set-frame">
+            <img src="img/tum-1/11-gimnasio-1.webp" width="828" height="1101" loading="lazy" alt="Edificio escolar de los años sesenta con las tejas aplicadas">
+            <img src="img/tum-1/11-gimnasio-2.webp" width="821" height="1101" loading="lazy" alt="Análisis de clima y mapeo de elementos en el edificio escolar">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">el mismo sistema en un edificio escolar de los sesenta</span><span class="en">the same system on a 1960s school building</span>
+              <span class="es">clima y mapeo · Christoph-Scheiner-Gymnasium</span><span class="en">climate and mapping · Christoph-Scheiner-Gymnasium</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 0.788">
+          <div class="set-frame">
+            <img src="img/tum-1/12-techo-1.webp" width="788" height="1101" loading="lazy" alt="Techumbre con las tejas CohabiShingles y aves entrando">
+            <img src="img/tum-1/12-techo-2.webp" width="868" height="1101" loading="lazy" alt="Corte por la cubierta con la franja de tejas nido">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">CohabiShingles — la versión de techumbre</span><span class="en">CohabiShingles — the roof version</span>
+              <span class="es">corte por la cubierta</span><span class="en">section through the roof</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <div class="box box-text box-extra">
+          <p><span class="es">Cada elemento se imprime en arcilla con un brazo robótico. Los ensayos buscaron cómo sostener el voladizo mientras la pieza aún está blanda: imprimirla <b>de pie</b>, sobre <b>subestructura</b>, o <b>inclinada a 30°</b>.</span><span class="en">Each element is printed in clay with a robotic arm. The trials looked for ways to hold the overhang while the piece is still soft: printing it <b>upright</b>, on a <b>substructure</b>, or <b>tilted at 30°</b>.</span></p>
+        </div>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.451">
+          <div class="set-frame">
+            <img src="img/tum-1/13-impresion-1.webp" width="1598" height="1101" loading="lazy" alt="La boquilla del robot depositando arcilla capa sobre capa">
+            <img src="img/tum-1/13-impresion-2.webp" width="789" height="1101" loading="lazy" alt="El elemento Nest impreso de pie, con el voladizo resuelto">
+            <img src="img/tum-1/13-impresion-3.webp" width="1588" height="1101" loading="lazy" alt="Impresión del Nest sobre un molde inclinado">
+            <img src="img/tum-1/13-impresion-4.webp" width="1597" height="1101" loading="lazy" alt="El elemento Flow impreso sobre subestructura">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">la boquilla deposita la arcilla capa sobre capa</span><span class="en">the nozzle lays the clay layer on layer</span>
+              <span class="es">el Nest impreso de pie</span><span class="en">the Nest printed upright</span>
+              <span class="es">el Nest sobre molde inclinado a 30°</span><span class="en">the Nest on a mould tilted 30°</span>
+              <span class="es">el Flow sobre subestructura</span><span class="en">the Flow on a substructure</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.460">
+          <div class="set-frame">
+            <img src="img/tum-1/14-modelo-1.webp" width="1607" height="1101" loading="lazy" alt="Las piezas horneadas y esmaltadas montadas sobre el soporte">
+            <img src="img/tum-1/14-modelo-2.webp" width="1576" height="1101" loading="lazy" alt="El modelo final de presentación con la maqueta de la torre">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">las piezas horneadas, escala 1:1</span><span class="en">the fired pieces, 1:1</span>
+              <span class="es">el modelo final</span><span class="en">the final model</span>
+            </span>
+          </figcaption>
         </figure>
       </div>
     </div>
@@ -418,13 +606,12 @@
       <div class="strip-inner">
         <div class="box box-meta">
           <span class="meta-icon" aria-hidden="true"></span>
-          <span class="meta-title" role="heading" aria-level="3"><span class="es">Proyecto TUM 2</span><span class="en">TUM project 2</span></span>
-          <span class="meta-loc">München, <span class="es">Alemania</span><span class="en">Germany</span></span>
+          <span class="meta-title" role="heading" aria-level="3">Rewoven City</span>
+          <span class="meta-loc">Viña del Mar, Chile</span>
           <dl class="ficha">
-            <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>20XX</dd></div>
-            <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd>—</dd></div>
-            <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd>—</dd></div>
-            <div><dt class="label"><span class="es">rol</span><span class="en">role</span></dt><dd>—</dd></div>
+            <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>2024–25</dd></div>
+            <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd>Water Ever · Francis Kéré</dd></div>
+            <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd><span class="es">Mercado, café y parque fluvial</span><span class="en">Market, café and river park</span></dd></div>
           </dl>
           <span class="meta-cue label">
             <span class="cue-open"><span class="es">ver proyecto →</span><span class="en">view project →</span></span>
@@ -433,23 +620,186 @@
         </div>
 
         <button class="box box-hero" aria-expanded="false">
-          <span class="ph" data-ph-es="imagen principal" data-ph-en="hero image"></span>
+          <img src="img/tum-2/01-portada.webp" width="1742" height="1101"
+               alt="Vista aérea del mercado puente sobre el estero y el parque fluvial">
         </button>
 
         <div class="box box-text box-extra">
-          <p><span class="es">[Dos o tres frases sobre la idea del proyecto.]</span><span class="en">[Two or three sentences about the idea.]</span></p>
+          <p><span class="es">Viña del Mar tapó con hormigón el lecho seco del estero Marga Marga y lo ocupó con una feria, porque faltaba espacio público. Cuando la lluvia cae de golpe el agua no tiene dónde infiltrarse y se lleva el mercado. La propuesta <b>saca la feria del cauce</b> y devuelve el lecho al río, como un parque que se inunda a propósito.</span><span class="en">Viña del Mar covered the dry bed of the Marga Marga with concrete and filled it with a street market, for lack of public space. When the rain falls all at once the water has nowhere to soak in, and it takes the market away. The proposal <b>moves the market out of the riverbed</b> and gives the bed back to the river, as a park that is meant to flood.</span></p>
         </div>
-        <figure class="box box-img box-extra" style="--ar:4/3">
-          <div class="ph" data-ph-es="diagrama de la idea" data-ph-en="concept diagram"></div>
-          <figcaption class="label"><span class="es">diagrama — los pasos del proyecto</span><span class="en">diagram — the project's steps</span></figcaption>
+
+        <figure class="box box-img box-extra">
+          <img src="img/tum-2/03-cauce.webp" width="1742" height="1101" loading="lazy"
+               alt="Cuatro cortes del cauce del estero entre 1933 y 2023">
+          <figcaption class="label"><span class="es">el cauce en cuatro tiempos — 1933, 1973, hoy y la crecida de junio de 2023</span><span class="en">the riverbed in four moments — 1933, 1973, today, and the June 2023 flood</span></figcaption>
         </figure>
-        <figure class="box box-img box-extra" style="--ar:3/4">
-          <div class="ph" data-ph-es="planta" data-ph-en="plan"></div>
-          <figcaption class="label"><span class="es">planta principal</span><span class="en">main floor plan</span></figcaption>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.582">
+          <div class="set-frame">
+            <img src="img/tum-2/04-rio-1.webp" width="1742" height="1101" loading="lazy" alt="Fotografía histórica del estero con agua a comienzos del siglo XX">
+            <img src="img/tum-2/05-crecida-3.webp" width="1742" height="1101" loading="lazy" alt="La feria arrasada por la crecida">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">el estero cuando llevaba agua, hacia 1900</span><span class="en">the estuary when it still carried water, around 1900</span>
+              <span class="es">la feria en el lecho, después de la crecida de 2023</span><span class="en">the market in the riverbed, after the 2023 flood</span>
+            </span>
+          </figcaption>
         </figure>
-        <figure class="box box-img box-extra" style="--ar:16/9">
-          <div class="ph" data-ph-es="imagen de cierre" data-ph-en="closing image"></div>
-          <figcaption class="label"><span class="es">contexto</span><span class="en">context</span></figcaption>
+
+        <div class="box box-text box-extra">
+          <p><span class="es">La feria se traslada al eje central de la ciudad y se vuelve tres lugares —<b>el mercado puente, el café y la plaza</b>— hechos con un mismo módulo hexagonal de madera y textil. Entre uno y otro el suelo se abre para que el agua vuelva a infiltrarse.</span><span class="en">The market moves to the city's central axis and becomes three places —<b>the bridge market, the café and the plaza</b>— built from one hexagonal module of timber and textile. Between them the ground is opened so the water can soak in again.</span></p>
+        </div>
+
+        <figure class="box box-img box-extra">
+          <img src="img/tum-2/06-agua-2.webp" width="1742" height="1101" loading="lazy"
+               alt="Plan verde con el parque fluvial propuesto sobre el cauce">
+          <figcaption class="label"><span class="es">el cauce entero pasa a ser parque</span><span class="en">the whole riverbed becomes park</span></figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.582">
+          <div class="set-frame">
+            <img src="img/tum-2/09-modulo-1.webp" width="1742" height="1101" loading="lazy" alt="El módulo hexagonal en su primer paso: la bodega">
+            <img src="img/tum-2/09-modulo-2.webp" width="1742" height="1101" loading="lazy" alt="El módulo crece hacia el puesto del vendedor">
+            <img src="img/tum-2/09-modulo-3.webp" width="1742" height="1101" loading="lazy" alt="El módulo casi completo con la zona peatonal">
+            <img src="img/tum-2/09-modulo-4.webp" width="1742" height="1101" loading="lazy" alt="El hexágono completo con sus cuatro anillos de uso">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">el módulo — la bodega al centro</span><span class="en">the module — storage at the core</span>
+              <span class="es">el puesto del vendedor</span><span class="en">the seller's space</span>
+              <span class="es">la segunda bodega</span><span class="en">the second store</span>
+              <span class="es">la zona peatonal cierra el hexágono</span><span class="en">the pedestrian zone closes the hexagon</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 2.214">
+          <div class="set-frame">
+            <img src="img/tum-2/10-estructura-1.webp" width="2438" height="1101" loading="lazy" alt="Axonométrica del módulo con los pilares de madera">
+            <img src="img/tum-2/10-estructura-2.webp" width="2438" height="1101" loading="lazy" alt="Axonométrica del módulo terminado con la cubierta textil">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">la estructura de madera sobre la base</span><span class="en">the timber structure on its base</span>
+              <span class="es">la cubierta se tiende de un módulo al siguiente</span><span class="en">the roof stretches from one module to the next</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.582">
+          <div class="set-frame">
+            <img src="img/tum-2/11-detalle-1.webp" width="1742" height="1101" loading="lazy" alt="Corte de detalle dibujado a la acuarela con gente bajo la cubierta">
+            <img src="img/tum-2/11-detalle-2.webp" width="1742" height="1101" loading="lazy" alt="Detalle del encuentro entre viga y pilar">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">corte de detalle</span><span class="en">detail section</span>
+              <span class="es">el encuentro de viga y pilar</span><span class="en">the beam-to-column joint</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="box box-img box-extra">
+          <img src="img/tum-2/12-planta-2.webp" width="1742" height="1101" loading="lazy"
+               alt="Planta general del conjunto a nivel de suelo">
+          <figcaption class="label"><span class="es">planta general — los tres lugares sobre el eje</span><span class="en">ground floor plan — the three places along the axis</span></figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.582">
+          <div class="set-frame">
+            <img src="img/tum-2/13-mercado-1.webp" width="1742" height="1101" loading="lazy" alt="Planta del mercado puente">
+            <img src="img/tum-2/13-mercado-2.webp" width="1742" height="1101" loading="lazy" alt="Corte perspectivado del mercado sobre el puente">
+            <img src="img/tum-2/13-mercado-3.webp" width="1742" height="1101" loading="lazy" alt="Vista interior del mercado puente con la cubierta de colores">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">01 el mercado puente · planta</span><span class="en">01 the bridge market · plan</span>
+              <span class="es">01 el mercado puente · corte perspectivado</span><span class="en">01 the bridge market · perspective section</span>
+              <span class="es">01 el mercado puente · la feria bajo el toldo</span><span class="en">01 the bridge market · the stalls under the canopy</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.582">
+          <div class="set-frame">
+            <img src="img/tum-2/14-cafe-1.webp" width="1742" height="1101" loading="lazy" alt="Corte perspectivado del café">
+            <img src="img/tum-2/14-cafe-2.webp" width="1742" height="1101" loading="lazy" alt="Vista interior del café bajo la estructura de madera">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">02 el café · corte perspectivado</span><span class="en">02 the café · perspective section</span>
+              <span class="es">02 el café · bajo la estructura</span><span class="en">02 the café · under the structure</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.582">
+          <div class="set-frame">
+            <img src="img/tum-2/15-plaza-1.webp" width="1742" height="1101" loading="lazy" alt="Corte perspectivado de la plaza central">
+            <img src="img/tum-2/15-plaza-2.webp" width="1742" height="1101" loading="lazy" alt="La plaza vista desde abajo de la cubierta de madera">
+            <img src="img/tum-2/15-plaza-3.webp" width="1742" height="1101" loading="lazy" alt="La plaza con gente y vegetación">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">03 la plaza · corte perspectivado</span><span class="en">03 the plaza · perspective section</span>
+              <span class="es">03 la plaza · bajo la cubierta</span><span class="en">03 the plaza · under the canopy</span>
+              <span class="es">03 la plaza · el jardín que absorbe</span><span class="en">03 the plaza · the garden that absorbs</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.582">
+          <div class="set-frame">
+            <img src="img/tum-2/16-infiltracion-2.webp" width="1742" height="1101" loading="lazy" alt="Planta de infiltración con el agua entrando desde las calles">
+            <img src="img/tum-2/16-infiltracion-3.webp" width="1742" height="1101" loading="lazy" alt="Detalle del suelo que absorbe el agua de lluvia">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">el agua entra desde las calles</span><span class="en">water comes in from the streets</span>
+              <span class="es">el suelo por dentro</span><span class="en">the ground in section</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="box box-img box-set box-extra" style="--set-ar: 1.582">
+          <div class="set-frame">
+            <img src="img/tum-2/18-cierre-1.webp" width="1742" height="1101" loading="lazy" alt="El estero con agua y el mercado puente al fondo">
+            <img src="img/tum-2/18-cierre-2.webp" width="1742" height="1101" loading="lazy" alt="El mismo lugar al atardecer, con gente en la ribera">
+          </div>
+          <figcaption class="set-bar">
+            <button class="set-btn set-prev" aria-label="Anterior">←</button>
+            <button class="set-btn set-next" aria-label="Siguiente">→</button>
+            <span class="set-count"></span>
+            <span class="set-cap">
+              <span class="es">el río de vuelta</span><span class="en">the river back</span>
+              <span class="es">la ribera al atardecer</span><span class="en">the bank at dusk</span>
+            </span>
+          </figcaption>
         </figure>
       </div>
     </div>
@@ -476,7 +826,6 @@
             <div><dt class="label"><span class="es">año</span><span class="en">year</span></dt><dd>20XX</dd></div>
             <div><dt class="label"><span class="es">taller</span><span class="en">studio</span></dt><dd>—</dd></div>
             <div><dt class="label"><span class="es">programa</span><span class="en">program</span></dt><dd>—</dd></div>
-            <div><dt class="label"><span class="es">rol</span><span class="en">role</span></dt><dd>—</dd></div>
           </dl>
           <span class="meta-cue label">
             <span class="cue-open"><span class="es">ver proyecto →</span><span class="en">view project →</span></span>

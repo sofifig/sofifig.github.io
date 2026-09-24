@@ -146,20 +146,80 @@ html[data-lang="en"] .lang-toggle .opt-en { color: var(--on-accent); font-weight
 }
 
 .hero-horizon { width: min(780px, 92vw); margin-top: 3.2rem; color: var(--ink); }
-.hero-horizon svg { width: 100%; height: auto; display: block; }
+/* overflow visible: el lápiz asoma por encima de la cordillera y por el
+   costado derecho, fuera del viewBox */
+.hero-horizon svg { width: 100%; height: auto; display: block; overflow: visible; }
+/* los trazos llevan pathLength="1": el largo va de 1 a 0, sin importar cuánto
+   mida el recorrido real */
+.hero-horizon .sea-line,
 .hero-horizon #horizonPath {
-  stroke-dasharray: 2400;
-  stroke-dashoffset: 2400;
-  animation: draw 2.6s ease-out 0.4s forwards;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1s linear forwards;
 }
-.hero-horizon .dot { fill: var(--accent); }
-.hero-horizon .dot, .hero-horizon .sea-line {
+
+/* el perfil completo: parte suave, cruza el océano y frena en la cordillera */
+.hero-horizon #horizonPath {
+  animation-duration: 2.2s;
+  animation-delay: 0.45s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.25, 1);
+}
+
+/* el mar entra detrás de la costa, justo después de que la línea pasa por ahí */
+.hero-horizon .sea-line {
+  animation-duration: 0.7s;
+  animation-delay: 1.05s;
+  animation-timing-function: ease-out;
+}
+.hero-horizon .sea-line + .sea-line { animation-delay: 1.25s; }
+
+/* Valparaíso aparece en el momento en que el trazo llega al punto */
+.hero-horizon .dot {
+  fill: var(--accent);
   opacity: 0;
-  animation: fadein 0.9s ease-out 2.3s forwards;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pop 0.5s cubic-bezier(0.34, 1.5, 0.64, 1) 1.15s forwards;
+}
+
+/* el lápiz aparece al primer trazo y se retira cuando la línea está lista.
+   Lo mueve main.js leyendo cuánto lleva dibujado, así nunca se desincroniza. */
+.hero-horizon .pencil {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+.hero-horizon .pencil.is-drawing {
+  opacity: 1;
+  transition-duration: 0.25s;
+}
+/* El lápiz es una silueta blanca maciza —el mismo blanco del punto de
+   Valparaíso— y el detalle se dibuja al revés: líneas del color del fondo
+   recortadas encima. Contra el papel oscuro no hay forma de que se pierda. */
+.hero-horizon .pencil-body {
+  fill: var(--accent);
+  stroke: var(--accent);
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+}
+/* los cortes: mina / madera, madera / cuerpo, y la banda impresa */
+.hero-horizon .pencil-cut {
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 1.5;
+}
+/* la arista del hexágono, más suave para que no parezca otro corte */
+.hero-horizon .pencil-ridge {
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 1;
+  opacity: 0.45;
 }
 
 @keyframes draw { to { stroke-dashoffset: 0; } }
-@keyframes fadein { to { opacity: 1; } }
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.2); }
+  to { opacity: 1; transform: scale(1); }
+}
 
 .scroll-hint {
   position: absolute;
@@ -588,8 +648,10 @@ html[data-lang="en"] .ph::after { content: attr(data-ph-en); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .hero-horizon #horizonPath { animation: none; stroke-dashoffset: 0; }
-  .hero-horizon .dot, .hero-horizon .sea-line { animation: none; opacity: 1; }
+  .hero-horizon #horizonPath,
+  .hero-horizon .sea-line { animation: none; stroke-dashoffset: 0; }
+  .hero-horizon .dot { animation: none; opacity: 1; transform: none; }
+  .hero-horizon .pencil { display: none; }
   .scroll-hint .arrow { animation: none; }
 }
 

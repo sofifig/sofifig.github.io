@@ -35,6 +35,58 @@
     observer.observe(el);
   });
 
+  /* ---- el lápiz que dibuja el horizonte ----
+     No lleva animación propia: cada fotograma lee cuánto trazo va dibujado
+     (el stroke-dashoffset que anima el CSS) y se planta en ese punto exacto.
+     Así la punta y la línea nunca se despegan, pase lo que pase con los
+     tiempos. */
+  var horizonte = document.getElementById("horizonPath");
+  var lapiz = document.getElementById("heroPencil");
+  var quieto = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (horizonte && lapiz && horizonte.getTotalLength && !quieto) {
+    var largo = horizonte.getTotalLength();
+    var inclina = 0;
+    var arranque = 0;
+
+    var seguir = function (ahora) {
+      if (!arranque) arranque = ahora;
+
+      var falta = parseFloat(getComputedStyle(horizonte).strokeDashoffset);
+      var avance = isNaN(falta) ? 0 : 1 - falta;
+
+      if (avance > 0 && avance < 1) {
+        var l = avance * largo;
+        var punta = horizonte.getPointAtLength(l);
+        var atras = horizonte.getPointAtLength(Math.max(0, l - 5));
+        var adelante = horizonte.getPointAtLength(Math.min(largo, l + 5));
+
+        /* la mano no gira con cada cerro: la pendiente sólo la inclina un
+           poco, y el cambio se suaviza para que no salte en las cumbres */
+        var pendiente = Math.atan2(adelante.y - atras.y, adelante.x - atras.x) * 180 / Math.PI;
+        var meta = Math.max(-14, Math.min(14, pendiente * 0.25));
+        inclina += (meta - inclina) * 0.15;
+
+        lapiz.setAttribute(
+          "transform",
+          "translate(" + punta.x.toFixed(2) + "," + punta.y.toFixed(2) + ") " +
+          "rotate(" + inclina.toFixed(2) + ")"
+        );
+        lapiz.classList.add("is-drawing");
+      }
+
+      /* el tope de 8s es sólo un seguro: si algo impide que la línea termine,
+         el lápiz se retira igual en vez de quedar dando vueltas */
+      if (avance < 1 && ahora - arranque < 8000) {
+        requestAnimationFrame(seguir);
+      } else {
+        lapiz.classList.remove("is-drawing");
+      }
+    };
+
+    requestAnimationFrame(seguir);
+  }
+
   /* ---- proyectos: la imagen principal abre y cierra ---- */
   function closeProject(project) {
     project.classList.remove("is-open");

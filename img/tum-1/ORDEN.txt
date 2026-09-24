@@ -1,0 +1,71 @@
+# CohabiTiles — Nest and Flow · orden del recorrido
+#
+# Propuesta mia, sacada del "Booklet_Group 1.pdf" (20 paginas).
+# Para cambiarlo: mueve las lineas, borra las que no quieras, o escribe
+# "p7" para pedir una pieza de una pagina que no use. El numero entre
+# parentesis es la pagina del booklet de la que sale cada recorte.
+#
+# Las que van pegadas con + se hojean juntas en un mismo marco.
+
+01-portada                (p2)   foto del techo con los vencejos
+TEXTO                            la idea en tres frases
+
+02-especie-1              (p3)   gorrion comun
+  + 02-especie-2          (p3)   vencejo comun
+
+03-comportamiento-1       (p4)   trayectoria de vuelo
+  + 03-comportamiento-2   (p4)   entrada al nido
+  + 03-comportamiento-3   (p4)   croquis de la teja monje y monja
+
+04-concepto-1             (p5)   Nest y Flow juntas
+  + 04-concepto-2         (p5)   Nest sola
+  + 04-concepto-3         (p5)   Flow sola
+
+05-parametro-1            (p6)   el parametro del Nest
+  + 05-parametro-2        (p7)   el parametro del Flow
+
+06-mantencion             (p8)   los tres pasos de la tapa
+07-clima-elemento         (p8)   horas de sol sobre la teja
+
+TEXTO                            la torre Dalwigk y las orientaciones
+
+08-torre                  (p9)   la torre con la fachada terminada
+
+09-clima-fachada-1        (p10)  sol y viento por orientacion
+  + 09-clima-fachada-2    (p10)  mapeo de elementos y franjas de actividad
+
+10-construccion-1         (p11)  subestructura y riel
+  + 10-construccion-2     (p11)  elevacion del conjunto
+
+11-gimnasio-1             (p12)  el edificio escolar con las tejas
+  + 11-gimnasio-2         (p13)  clima y mapeo del gimnasio
+
+12-techo-1                (p14)  CohabiShingles, la techumbre
+  + 12-techo-2            (p15)  corte por la cubierta
+
+TEXTO                            como se imprime cada pieza
+
+13-impresion-1            (p16)  la boquilla depositando arcilla
+  + 13-impresion-2        (p18)  el Nest impreso de pie
+  + 13-impresion-3        (p18)  el Nest sobre molde inclinado
+  + 13-impresion-4        (p17)  el Flow sobre subestructura
+
+14-modelo-1               (p19)  las piezas horneadas
+  + 14-modelo-2           (p19)  el modelo final
+
+
+# ---------------------------------------------------------------
+# LO QUE DEJE FUERA, POR SI LO QUIERES
+#
+# p4   tres fotos de referencia (gorrion en tejas, vencejo en muro,
+#      teja monje y monja). Las saque porque no son de ustedes: son de
+#      wienerberger, theconversation y wikipedia, y traen la URL
+#      impresa encima.
+# p1   y p20: portada y contraportada del booklet, solo texto del taller.
+# p16 a p18: quedan cinco fotos mas del taller de impresion sin usar.
+#
+# Del booklet colectivo (57 paginas) tampoco use nada. Ahi estan:
+#   p2 a p7   la presentacion del taller, el sitio y la torre Dalwigk
+#   p53 a p55 fotos de la presentacion final en el brigk de Ingolstadt
+#             (son de Marie Krudl y Michelle Mattes, hay que creditarlas)
+#   p44 a p52 las mismas laminas de ustedes, pero en doble pagina

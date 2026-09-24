@@ -1,0 +1,95 @@
+# Rewoven City — orden del recorrido
+#
+# Sacado de "WATEREVER_BA_G03_FINAaLREVIEW.pdf" (96 laminas).
+# El numero entre parentesis es la lamina de la que sale cada recorte.
+# Las que van pegadas con + se hojean juntas en un mismo marco.
+#
+# Criterio: el proyecto entero, y solo el analisis que hace falta
+# para entenderlo. Todo lo demas quedo fuera (lista al final).
+
+01-portada               (p94)  vista aerea del conjunto
+TEXTO                           el rio tapado y la feria que se lleva la crecida
+
+03-cauce                 (p6)   el cauce en cuatro tiempos, 1933 a 2023
+
+04-rio-1                 (p7)   el estero cuando llevaba agua, hacia 1900
+  + 05-crecida-3         (p13)  la feria en el lecho, despues de la crecida de 2023
+
+TEXTO                           los tres lugares y el modulo
+
+06-agua-2                (p16)  el cauce entero pasa a ser parque
+
+09-modulo-1              (p50)  el hexagono, primer anillo
+  + 09-modulo-2          (p53)  el puesto del vendedor
+  + 09-modulo-3          (p55)  la segunda bodega
+  + 09-modulo-4          (p57)  el hexagono completo
+
+10-estructura-1          (p59)  la estructura de madera
+  + 10-estructura-2      (p62)  con la cubierta textil
+
+11-detalle-1             (p63)  corte de detalle a la acuarela
+  + 11-detalle-2         (p67)  encuentro de viga y pilar
+
+12-planta-2              (p47)  planta general
+
+13-mercado-1             (p71)  mercado puente, planta
+  + 13-mercado-2         (p72)  mercado puente, corte perspectivado
+  + 13-mercado-3         (p74)  mercado puente, imagen
+
+14-cafe-1                (p77)  cafe, corte perspectivado
+  + 14-cafe-2            (p79)  cafe, imagen
+
+15-plaza-1               (p81)  plaza, corte perspectivado
+  + 15-plaza-2           (p83)  plaza bajo la cubierta
+  + 15-plaza-3           (p84)  plaza, el jardin
+
+16-infiltracion-2        (p88)  el agua entra desde las calles
+  + 16-infiltracion-3    (p89)  el suelo por dentro
+
+18-cierre-1              (p95)  el rio de vuelta
+  + 18-cierre-2          (p96)  la ribera al atardecer
+
+
+# ---------------------------------------------------------------
+# FUERA DEL RECORRIDO
+#
+# Analisis que saque para aligerar (di el numero de lamina y lo repongo):
+#   p3   Chile, region, Viña del Mar
+#   p8   el lecho seco hoy desde el aire
+#   p9   el lecho seco bajo el puente
+#   p10  grafico de precipitacion mensual
+#   p11  la feria sobre el hormigon, antes de la crecida
+#   p15  plan de agua del territorio
+#   p17  zonas de agua de la cuenca
+#   p18  emplazamiento de la feria
+#   p23  llenos y vacios
+#   p40  el entorno con las fotos del lugar
+#   p45  circulaciones
+#   p46  planta de techumbres
+#   p86  primera planta de infiltracion
+#   p90  el render del parque
+#
+# Laminas que son la misma imagen apareciendo por partes, para
+# proyectar. De cada serie tome la version completa:
+#   p25 a p40  el entorno, 16 pasos
+#   p42 a p45  circulaciones
+#   p49 a p57  el modulo creciendo   -> use p50, p53, p55, p57
+#   p58 a p62  axonometria           -> use p59 y p62
+#   p64 a p69  detalle constructivo  -> use p67
+#   p86 a p88  infiltracion          -> use p88
+#
+# Nunca usadas: p4, p19 a p22, p24, p41, p73, p76, p78, p82, p85, p91 a p93.
+#
+# El "booklet finaal.pdf" (122 paginas) esta armado en dobles paginas
+# y cada dibujo queda partido en dos, asi que no sirve para recortar.
+# Pero tiene un capitulo de fotos de maqueta (1:500, 1:100 y 1:1) que
+# la presentacion no trae. Si quieres maquetas, salen de ahi.
+#
+# ---------------------------------------------------------------
+# COMO SE HIZO CADA RECORTE
+#
+# Todas las laminas comparten la misma caja de contenido, asi que el
+# recorte es siempre el mismo y todas salen con la misma proporcion:
+#   recortar (50, 48, 794, 518) en puntos  -> deja fuera el pie con
+#   los nombres y el logo TUM
+#   exportar a WebP, alto 1100 px, calidad 83
