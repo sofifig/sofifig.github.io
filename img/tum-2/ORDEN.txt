@@ -80,16 +80,21 @@ TEXTO                           los tres lugares y el modulo
 # ---------------------------------------------------------------
 # COMO SE HIZO CADA RECORTE
 #
-# Laminas de la presentacion: se recorta a la caja real del contenido,
-# no a la de la lamina, para que no quede el margen blanco alrededor.
-# En casi todas el contenido va de (56,7 · 55,6) a (785,2 · 511,4);
-# los planos de trafico son mas angostos, de (99,7) a (741,8). Asi
-# tampoco entra el pie con los nombres ni el logo TUM.
+# El recorte se hace en dos pasos, porque la lamina traia margen
+# blanco y ademas varias imagenes traian mas blanco adentro:
 #
-# Excepcion: los dibujos de linea (04-estructura-2 a -6 y todo el
-# 06-detalle). Ahi el blanco es la lamina, no un borde, y ademas la
-# serie necesita la misma caja para todos, si no el dibujo no se ve
-# crecer al hojear. Esos van con la caja (50, 48, 794, 518).
+#   1. se recorta a la caja real del contenido de la lamina, que deja
+#      fuera el pie con los nombres y el logo TUM
+#   2. sobre esa imagen se mide cuanto blanco queda pegado a cada
+#      borde y se vuelve a recortar, esta vez por pixel
+#
+# Las dos series que se hojean (04-estructura-2 a -6, y todo el
+# 06-detalle) comparten recorte: se les quita solo el blanco que
+# sobra en TODAS. Si se recortara cada una a su dibujo, la base y la
+# cubierta terminada saldrian del mismo tamaño y se perderia la
+# sensacion de que la estructura crece al pasar de una a otra.
+#
+# Todo a WebP, alto 1100 px, calidad 83.
 #
 # Maquetas: se arman las dos paginas A5 lado a lado y se recorta al
 # area de las fotos.
