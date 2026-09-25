@@ -80,10 +80,16 @@ TEXTO                           los tres lugares y el modulo
 # ---------------------------------------------------------------
 # COMO SE HIZO CADA RECORTE
 #
-# Laminas de la presentacion: todas comparten la misma caja, asi que
-# el recorte es siempre el mismo y todas salen con la misma proporcion.
-#   recortar (50, 48, 794, 518) en puntos  -> deja fuera el pie con
-#   los nombres y el logo TUM
+# Laminas de la presentacion: se recorta a la caja real del contenido,
+# no a la de la lamina, para que no quede el margen blanco alrededor.
+# En casi todas el contenido va de (56,7 · 55,6) a (785,2 · 511,4);
+# los planos de trafico son mas angostos, de (99,7) a (741,8). Asi
+# tampoco entra el pie con los nombres ni el logo TUM.
+#
+# Excepcion: los dibujos de linea (04-estructura-2 a -6 y todo el
+# 06-detalle). Ahi el blanco es la lamina, no un borde, y ademas la
+# serie necesita la misma caja para todos, si no el dibujo no se ve
+# crecer al hojear. Esos van con la caja (50, 48, 794, 518).
 #
 # Maquetas: se arman las dos paginas A5 lado a lado y se recorta al
 # area de las fotos.
