@@ -94,9 +94,7 @@ TEXTO                           los tres lugares y el modulo
 # cubierta terminada saldrian del mismo tamaño y se perderia la
 # sensacion de que la estructura crece al pasar de una a otra.
 #
-# Todo a WebP, alto 1100 px, calidad 83.
-#
 # Maquetas: se arman las dos paginas A5 lado a lado y se recorta al
-# area de las fotos.
+# area de las fotos, mas el mismo afeitado por pixel.
 #
 # Todo a WebP, alto 1100 px, calidad 83.
