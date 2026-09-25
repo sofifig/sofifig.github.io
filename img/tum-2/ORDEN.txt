@@ -10,6 +10,11 @@
 00-portada               (p74)  la feria bajo la cubierta de colores
 TEXTO                           el rio tapado y la feria que se lleva la crecida
 
+05-verde-1               (p93)  plan verde a futuro, la ciudad entera
+  + 05-verde-2           (p92)  plan verde a futuro, las manzanas
+  + 05-verde-3           (p91)  plan verde, el parque sobre el cauce
+  + 05-verde-4           (p94)  el conjunto desde el aire
+
 01-cauce                 (p6)   el cauce en cuatro tiempos, 1933 a 2023
 
 02-trafico-1             (p41)  el trafico propuesto
@@ -17,6 +22,13 @@ TEXTO                           el rio tapado y la feria que se lleva la crecida
 
 03-planta-1              (p46)  planta de techumbres
   + 03-planta-2          (p47)  planta general
+
+07-zoom-1                (p71)  mercado puente, planta
+  + 07-zoom-2            (p75)  cafe, planta
+  + 07-zoom-3            (p76)  cafe, la textura del suelo
+  + 07-zoom-4            (p82)  plaza, corte
+  + 07-zoom-5            (p73)  mercado puente, corte
+  + 07-zoom-6            (p78)  cafe, corte
 
 TEXTO                           los tres lugares y el modulo
 
@@ -27,24 +39,12 @@ TEXTO                           los tres lugares y el modulo
   + 04-estructura-5      (p61)  el entramado completo
   + 04-estructura-6      (p62)  la cubierta tendida al modulo vecino
 
-05-verde-1               (p93)  plan verde a futuro, la ciudad entera
-  + 05-verde-2           (p92)  plan verde a futuro, las manzanas
-  + 05-verde-3           (p91)  plan verde, el parque sobre el cauce
-  + 05-verde-4           (p94)  el conjunto desde el aire
-
 06-detalle-1             (p64)  el encuentro completo, con los pernos
   + 06-detalle-2         (p65)  las vigas llegan al pilar
   + 06-detalle-3         (p66)  el cruce de vigas
   + 06-detalle-4         (p67)  la placa que las une
   + 06-detalle-5         (p68)  el extremo de la viga
   + 06-detalle-6         (p69)  el extremo, con su placa
-
-07-zoom-1                (p71)  mercado puente, planta
-  + 07-zoom-2            (p75)  cafe, planta
-  + 07-zoom-3            (p76)  cafe, la textura del suelo
-  + 07-zoom-4            (p82)  plaza, corte
-  + 07-zoom-5            (p73)  mercado puente, corte
-  + 07-zoom-6            (p78)  cafe, corte
 
 08-maqueta-1      (booklet p110-111)  maqueta 1:500, el parque y el mercado
   + 08-maqueta-2  (booklet p112-113)  maqueta 1:500, el cauce
@@ -86,7 +86,11 @@ TEXTO                           los tres lugares y el modulo
 #   1. se recorta a la caja real del contenido de la lamina, que deja
 #      fuera el pie con los nombres y el logo TUM
 #   2. sobre esa imagen se mide cuanto blanco queda pegado a cada
-#      borde y se vuelve a recortar, esta vez por pixel
+#      borde y se vuelve a recortar, esta vez por pixel, dejando seis
+#      pixeles sin cortar. Ese margen hace falta: el borde suavizado
+#      de una linea o de una letra se mide como blanco, y cortando al
+#      ras el dibujo queda mordido (le paso al cauce, se comio la
+#      linea negra de arriba y la base del 06.2023)
 #
 # Las dos series que se hojean (04-estructura-2 a -6, y todo el
 # 06-detalle) comparten recorte: se les quita solo el blanco que
