@@ -85,12 +85,20 @@ TEXTO                           los tres lugares y el modulo
 #
 #   1. se recorta a la caja real del contenido de la lamina, que deja
 #      fuera el pie con los nombres y el logo TUM
-#   2. sobre esa imagen se mide cuanto blanco queda pegado a cada
-#      borde y se vuelve a recortar, esta vez por pixel, dejando seis
-#      pixeles sin cortar. Ese margen hace falta: el borde suavizado
-#      de una linea o de una letra se mide como blanco, y cortando al
-#      ras el dibujo queda mordido (le paso al cauce, se comio la
-#      linea negra de arriba y la base del 06.2023)
+#   2. sobre esa imagen se mide el blanco pegado a cada borde, con dos
+#      umbrales. Si hay una BANDA de blanco puro (mas de 10 px) se
+#      corta dejando seis px de seguridad: el borde suavizado de una
+#      linea o de una letra se mide como blanco y al ras el dibujo
+#      queda mordido (le paso al cauce, se comio la linea negra de
+#      arriba y la base del 06.2023). Si no hay banda, se corta solo
+#      el HILO claro del canto, con tope de 10 px, para no entrar en
+#      un cielo de acuarela o un fondo clarito que no es blanco.
+#   3. sobre la imagen ya generada se raspan hasta 4 px mas, porque el
+#      re-render deja una fila de antialiasing que sobre el fondo
+#      oscuro de la pagina se ve como una linea brillante
+#
+# El cauce ademas guarda la mitad de su blanco a proposito: son cuatro
+# cortes apilados y al ras quedaban encima del borde.
 #
 # Las dos series que se hojean (04-estructura-2 a -6, y todo el
 # 06-detalle) comparten recorte: se les quita solo el blanco que
