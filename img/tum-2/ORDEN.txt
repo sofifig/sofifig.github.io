@@ -7,7 +7,7 @@
 #
 # Las que van pegadas con + se hojean juntas en un mismo marco.
 
-00-portada               (p94)  vista aerea del conjunto
+00-portada               (p74)  la feria bajo la cubierta de colores
 TEXTO                           el rio tapado y la feria que se lleva la crecida
 
 01-cauce                 (p6)   el cauce en cuatro tiempos, 1933 a 2023
@@ -30,7 +30,7 @@ TEXTO                           los tres lugares y el modulo
 05-verde-1               (p93)  plan verde a futuro, la ciudad entera
   + 05-verde-2           (p92)  plan verde a futuro, las manzanas
   + 05-verde-3           (p91)  plan verde, el parque sobre el cauce
-  + 00-portada           (p94)  el conjunto desde el aire
+  + 05-verde-4           (p94)  el conjunto desde el aire
 
 06-detalle-1             (p64)  el encuentro completo, con los pernos
   + 06-detalle-2         (p65)  las vigas llegan al pilar
@@ -50,13 +50,17 @@ TEXTO                           los tres lugares y el modulo
   + 08-maqueta-2  (booklet p112-113)  maqueta 1:500, el cauce
   + 08-maqueta-3  (booklet p118-119)  maqueta 1:1, el encuentro de madera
 
+09-cierre-1              (p96)  la ribera al atardecer
+  + 09-cierre-2          (p95)  el rio de vuelta
+  + 09-cierre-3          (p94)  el conjunto desde el aire
+
 
 # ---------------------------------------------------------------
 # DOS COSAS QUE CONVIENE SABER
 #
-# 1. La p94 esta dos veces: como portada y como ultima del conjunto
-#    05-verde. Aparece repetida dentro de la misma tira. Si quieres,
-#    la saco de uno de los dos lugares.
+# 1. La p94 esta dos veces: cierra el conjunto 05-verde y cierra
+#    tambien el recorrido entero, en 09-cierre-3. Si quieres, la saco
+#    de uno de los dos lugares.
 #
 # 2. En tu lista el sexto grupo decia "64, 65, 66, 67, 66, 69": el 66
 #    estaba dos veces y faltaba el 68. Puse la serie completa,
@@ -65,7 +69,7 @@ TEXTO                           los tres lugares y el modulo
 # ---------------------------------------------------------------
 # LO QUE QUEDO FUERA
 #
-# De las 96 laminas se usan 27. Las otras estan todas disponibles:
+# De las 96 laminas se usan 30. Las otras estan todas disponibles:
 # pideme el numero y la repongo. Las hojas de contacto numeradas
 # con las 96 te las mande por chat el 24 de septiembre.
 #
