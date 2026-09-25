@@ -24,9 +24,6 @@ TEXTO                            la idea en tres frases
 05-parametro-1            (p6)   el parametro del Nest
   + 05-parametro-2        (p7)   el parametro del Flow
 
-06-mantencion             (p8)   los tres pasos de la tapa
-07-clima-elemento         (p8)   horas de sol sobre la teja
-
 TEXTO                            la torre Dalwigk y las orientaciones
 
 08-torre                  (p9)   la torre con la fachada terminada
@@ -56,6 +53,10 @@ TEXTO                            como se imprime cada pieza
 
 # ---------------------------------------------------------------
 # LO QUE DEJE FUERA, POR SI LO QUIERES
+#
+# p8   las dos piezas que salian de esta pagina: la mantencion de la
+#      tapa (los tres pasos) y las horas de sol sobre el elemento.
+#      Las saco Sofia el 25 de septiembre de 2026.
 #
 # p4   tres fotos de referencia (gorrion en tejas, vencejo en muro,
 #      teja monje y monja). Las saque porque no son de ustedes: son de
